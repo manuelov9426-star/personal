@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://manuelov9426-star.github.io/personal/sitemap.xml
