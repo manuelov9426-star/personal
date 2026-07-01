@@ -652,6 +652,8 @@ body.has-cursor[data-cursor=link] .cursor-ring {
   grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
   gap:clamp(1.5rem,4vw,3rem);
   align-items:center;
+  max-width:960px;
+  margin-inline:auto;
   margin-block:clamp(3rem,7vh,5rem);
   transform:rotate(-.6deg);
   box-shadow:0 24px 70px #00000073}
@@ -684,10 +686,11 @@ body.has-cursor[data-cursor=link] .cursor-ring {
   text-transform:none}
 .quote-card .quote-photo {
   border:6px solid #fff;
-  transform:rotate(2.4deg);
+  transform:rotate(1.8deg);
   box-shadow:0 14px 40px #00000059;
+  align-self:center;
   justify-self:center;
-  max-width:min(320px,100%)}
+  max-width:min(255px,100%)}
 .quote-card .quote-photo img {
   display:block;
   width:100%;
@@ -1013,8 +1016,13 @@ body {
 .amor-text { max-width:30em; display:grid; gap:.8rem; justify-items:center; }
 .amor-text h3 { font-family:var(--font-display); text-transform:uppercase; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:.03em; color:var(--amber); }
 .amor-text p { color:var(--cream-dim); }
-.galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:clamp(1.6rem,3.5vw,2.8rem); justify-items:center; }
-.gal-stack { display:flex; flex-direction:column; gap:clamp(1.4rem,3vw,2.2rem); align-items:center; }
+/* Gallery — masonry so mixed photo ratios pack tight (no big gaps) */
+.galeria { column-count:3; column-gap:clamp(1.4rem,3vw,2.4rem); }
+.galeria > figure, .galeria > .gal-stack { break-inside:avoid; width:100%; margin:0 0 clamp(1.4rem,3vw,2.4rem); text-align:center; }
+.galeria .sticker-frame { width:100%; }
+@media (max-width:900px){ .galeria { column-count:2; } }
+@media (max-width:520px){ .galeria { column-count:1; } }
+.gal-stack { display:flex; flex-direction:column; gap:clamp(1.4rem,3vw,2.4rem); }
 .gal-stack figure { margin:0; }
 .notes-intro { display:flex; flex-wrap:wrap; align-items:flex-start; gap:2rem; }
 .notes-bubble { max-width:15rem; margin-top:.4rem; }
@@ -1030,10 +1038,11 @@ body {
 .apolo-solo { max-width:340px; margin:clamp(2.4rem,5vh,3.6rem) auto 0; display:grid; justify-items:center; gap:.2rem; }
 
 /* Apolo strip — photo + note side by side (home & about) */
-.apolo-strip { display:flex; flex-wrap:wrap; align-items:center; gap:clamp(1.6rem,4vw,3.2rem); margin-top:clamp(2.5rem,6vh,4rem); }
-.apolo-strip > figure { margin:0; flex:0 0 auto; width:min(300px,100%); }
-.apolo-strip .sticker-caption { text-align:left; }
-.apolo-text { flex:1 1 300px; display:flex; flex-direction:column; align-items:flex-start; gap:1.1rem; }
+/* Apolo strip — photo + note, centered as one balanced unit (home & about) */
+.apolo-strip { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:clamp(1.6rem,4vw,3.4rem); margin-top:clamp(2.5rem,6vh,4rem); }
+.apolo-strip > figure { margin:0; flex:0 0 auto; width:min(280px,100%); }
+.apolo-strip .sticker-caption { text-align:center; }
+.apolo-text { flex:0 1 440px; max-width:440px; display:flex; flex-direction:column; align-items:flex-start; gap:1.1rem; }
 .apolo-text p { color:var(--cream-dim); max-width:34em; font-size:1.05rem; }
 
 /* Extra responsiveness for phones & small tablets */
