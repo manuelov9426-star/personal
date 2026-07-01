@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Notas — Manuel Oviedo</title>
-<meta name="description" content="Cuaderno abierto de la maestría en IA y analítica: machine learning, marketing causal, MMM y forecasting. Próximamente.">
+<meta name="description" content="Cuaderno abierto de la maestría en IA y analítica: ML, marketing causal, MMM, pricing, forecasting, segmentación y más.">
 <link rel="canonical" href="https://manuelov9426-star.github.io/personal/notas.html">
 <link rel="alternate" hreflang="es" href="https://manuelov9426-star.github.io/personal/notas.html">
 <link rel="alternate" hreflang="en" href="https://manuelov9426-star.github.io/personal/en/notes.html">
@@ -13,30 +13,35 @@
 <meta name="theme-color" content="#0E0E11">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Notas — Manuel Oviedo">
-<meta property="og:description" content="Cuaderno abierto de la maestría en IA y analítica: machine learning, marketing causal, MMM y forecasting. Próximamente.">
+<meta property="og:description" content="Cuaderno abierto de la maestría en IA y analítica: ML, marketing causal, MMM, pricing, forecasting, segmentación y más.">
 <meta property="og:url" content="https://manuelov9426-star.github.io/personal/notas.html">
-<meta property="og:image" content="https://manuelov9426-star.github.io/personal/assets/img/portrait-amber-halftone.webp">
+<meta property="og:image" content="https://manuelov9426-star.github.io/personal/assets/img/portrait-halftone.webp">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Notas — Manuel Oviedo">
-<meta name="twitter:description" content="Cuaderno abierto de la maestría en IA y analítica: machine learning, marketing causal, MMM y forecasting. Próximamente.">
-<meta name="twitter:image" content="https://manuelov9426-star.github.io/personal/assets/img/portrait-amber-halftone.webp">
+<meta name="twitter:description" content="Cuaderno abierto de la maestría en IA y analítica: ML, marketing causal, MMM, pricing, forecasting, segmentación y más.">
+<meta name="twitter:image" content="https://manuelov9426-star.github.io/personal/assets/img/portrait-halftone.webp">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230E0E11'/%3E%3Ctext x='32' y='44' font-family='Impact,sans-serif' font-size='30' font-weight='900' fill='%23E0903F' text-anchor='middle'%3EMO%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500;1,9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
-<script>document.documentElement.className="js";</script>
+<script>document.documentElement.className="js";setTimeout(function(){if(!window.__revealArmed)document.documentElement.className="";},2600);</script>
 </head>
 <body>
 <a class="skip-link" href="#contenido">Saltar al contenido</a><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="boil-1" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.026" numOctaves="3" seed="1" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/></filter><filter id="boil-2" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.026" numOctaves="3" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/></filter><filter id="boil-3" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.026" numOctaves="3" seed="13" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="4.5"/></filter></defs></svg><header class="nav"><div class="wrap nav-inner"><a class="nav-logo" href="index.html">Manuel<span>&nbsp;Oviedo</span></a><nav aria-label="Navegación principal"><ul class="nav-links"><li><a href="index.html">Inicio</a></li><li><a href="sobre-mi.html">Sobre mí</a></li><li><a href="trabajo.html">Trabajo</a></li><li><a href="notas.html" class="active" aria-current="page">Notas</a></li><li><a href="contacto.html">Contacto</a></li><li><span class="lang-switch"><a href="notas.html" class="on" hreflang="es">ES</a><span class="sep">/</span><a href="en/notes.html" hreflang="en">EN</a></span></li></ul></nav></div></header><main id="contenido">
 <section class="hero" style="padding-bottom:1rem"><div class="wrap"><p class="eyebrow rv">Cuaderno abierto · maestría en IA & analítica</p>
 <h1 class="display chapter-title rv d1" style="margin-top:.4em">Notas <span class="alt">de clase.</span></h1>
-<div class="notes-intro rv d2"><p style="max-width:38em;color:var(--cream-dim)">Estudio una maestría en IA y tomo notas como si fuera a enseñarlo mañana. Esto no es un blog: es mi cuaderno, en público. Las estoy pasando en limpio — pronto las publico acá.</p><div class="notes-bubble"><div class="bubble amber-border">apuntes reales, código ejecutado, cero humo<svg class="tail boil" viewBox="0 0 34 30" aria-hidden="true"><path d="M6 2 C 10 14, 8 20, 3 27 C 14 22, 20 14, 23 3"></path></svg></div></div></div>
+<div class="notes-intro rv d2"><p style="max-width:38em;color:var(--cream-dim)">Estudio una maestría en inteligencia artificial y tomo notas como si fuera a enseñarlo mañana. Esto no es un blog: es mi cuaderno, en público. Las estoy pasando en limpio — pronto las publico acá.</p><div class="notes-bubble"><div class="bubble amber-border">apuntes reales, código ejecutado, cero humo<svg class="tail boil" viewBox="0 0 34 30" aria-hidden="true"><path d="M6 2 C 10 14, 8 20, 3 27 C 14 22, 20 14, 23 3"></path></svg></div></div></div>
 </div></section>
-<section class="wrap notebook" style="padding-bottom:var(--section-y)"><div class="notes-grid">
+<section class="wrap" aria-label="Notas" style="padding-bottom:var(--section-y)"><div class="notes-grid">
 <div class="note-card soon rv" style="--tilt:-1.2deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Manual completo · 23 secciones</span><h3>De Data Analyst a ML Engineer</h3><p>El manual del curso de aprendizaje de máquina: Python, 11 algoritmos a fondo, diseño experimental, métricas y un caso integrador de churn. Todo el código ejecutado de verdad.</p><span class="note-cta">Casi lista…</span></div>
 <div class="note-card soon rv" style="--tilt:0.8deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Marketing causal</h3><p>Por qué la atribución no es causalidad, y qué hacer al respecto: experimentos, incrementalidad y los límites honestos de cada método.</p><span class="note-cta">Pasándolas en limpio…</span></div>
-<div class="note-card soon rv" style="--tilt:-0.6deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Marketing Mix Modeling</h3><p>Lo que aprendí construyendo MMMs de verdad: Meridian, Robyn, priors bayesianos y la diferencia entre ajustar un modelo y creerle.</p><span class="note-cta">Pasándolas en limpio…</span></div>
-</div></section></main><footer class="footer"><div class="wrap footer-inner"><p>Manuel Oviedo · Bogotá, Colombia</p><p><a href="mailto:manuelov9426@gmail.com">manuelov9426@gmail.com</a> · <a href="https://www.linkedin.com/in/manueloviedo-marketing" rel="me noopener" target="_blank">LinkedIn</a></p><p class="serif-it">Hecho a mano, sin jerga corporativa.</p></div></footer><script src="app.js"></script>
+<div class="note-card soon rv" style="--tilt:-0.6deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Marketing Mix Modeling</h3><p>Lo que aprendí construyendo MMMs de verdad: Meridian, Robyn, priors bayesianos y la diferencia entre ajustar un modelo y entender un negocio.</p><span class="note-cta">Pasándolas en limpio…</span></div>
+<div class="note-card soon rv" style="--tilt:1.1deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Pricing</h3><p>Elasticidades, experimentos de precio y por qué cobrar bien es un problema de psicología disfrazado de econometría.</p><span class="note-cta">Pasándolas en limpio…</span></div>
+<div class="note-card soon rv" style="--tilt:-1deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Forecasting</h3><p>Pronosticar es humillante por diseño. Notas sobre series de tiempo, validación honesta y la frontera entre señal y deseo.</p><span class="note-cta">Pasándolas en limpio…</span></div>
+<div class="note-card soon rv" style="--tilt:0.7deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Segmentación</h3><p>Clustering que sobrevive al contacto con la realidad: K-means, factores, silhouette scores y la pregunta incómoda de para qué segmentas.</p><span class="note-cta">Pasándolas en limpio…</span></div>
+<div class="note-card soon rv" style="--tilt:-0.9deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Econometría × Machine Learning</h3><p>Dos tribus que se necesitan y se desprecian. Notas sobre dónde la inferencia causal y la predicción se prestan herramientas.</p><span class="note-cta">Pasándolas en limpio…</span></div>
+<div class="note-card soon rv" style="--tilt:1.3deg"><span class="tape" aria-hidden="true"></span><span class="note-kicker">Frontera de investigación</span><h3>Filosofía interdisciplinar</h3><p>El cajón donde la economía, la psicología y la antropología se pelean. Mis apuntes de por qué ninguna disciplina alcanza sola.</p><span class="note-cta">Pasándolas en limpio…</span></div>
+</div></section></main><footer class="footer"><div class="wrap footer-inner"><p>Manuel Oviedo · Bogotá, Colombia</p><p><a href="mailto:manuelov9426@gmail.com">manuelov9426@gmail.com</a> · <a href="https://www.linkedin.com/in/manueloviedo-marketing" rel="me noopener" target="_blank">LinkedIn</a> · <a href="https://wa.me/573508748103" rel="noopener" target="_blank">WhatsApp</a></p><p class="serif-it">Hecho a mano, sin jerga corporativa.</p></div></footer><script src="app.js"></script>
 </body>
 </html>

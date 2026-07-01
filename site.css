@@ -226,7 +226,8 @@ body.has-cursor[data-cursor=link] .cursor-ring {
   position:relative}
 .hero-portrait {
   position:relative;
-  transform:rotate(2deg);
+  transform:rotate(2deg) var(--drift, translate(0,0));
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
   border:6px solid var(--cream);
   box-shadow:0 22px 60px #0000008c;
   background:var(--bg-2)}
@@ -518,7 +519,7 @@ body.has-cursor[data-cursor=link] .cursor-ring {
   font-weight:600}
 .chapter {
   position:relative;
-  padding-block:clamp(4rem,10vh,7.5rem);
+  padding-block:clamp(2.8rem,6.5vh,5rem);
   border-top:1px solid var(--line)}
 .chapter-head {
   display:flex;
@@ -707,7 +708,8 @@ body.has-cursor[data-cursor=link] .cursor-ring {
   font-family:var(--font-display);
   font-size:clamp(2.1rem,4.6vw,3.3rem);
   color:var(--amber);
-  line-height:1}
+  line-height:1;
+  font-variant-numeric:tabular-nums}
 .stat-label {
   display:block;
   margin-top:.55rem;
@@ -739,7 +741,7 @@ body.has-cursor[data-cursor=link] .cursor-ring {
   --grid: rgba(244, 236, 221, .05)}
 .notes-grid {
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(min(270px,100%),1fr));
   gap:clamp(1.4rem,3vw,2.2rem);
   margin-block:clamp(2.5rem,6vh,4rem)}
 .note-card {
@@ -886,7 +888,7 @@ a.note-card:hover {
   color:var(--amber)}
 .endcap {
   border-top:1px solid var(--line);
-  padding-block:clamp(4rem,9vh,6.5rem);
+  padding-block:clamp(3rem,7vh,5rem);
   text-align:center}
 .endcap .display {
   font-size:clamp(2.6rem,8vw,6rem)}
@@ -1003,12 +1005,17 @@ body {
 .toolbox h3 { font-family:var(--font-display); font-weight:400; text-transform:uppercase; font-size:1.4rem; letter-spacing:.03em; }
 .toolbox p { color:var(--cream-dim); font-size:.95rem; margin:.7rem 0 1.2rem; }
 
-/* About galleries */
+/* About — exact rules ported from the original sobre-mi page */
+.quien-fotos { display:grid; gap:1.8rem; justify-items:center; align-self:center; }
+.quien-rasgos { grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); column-gap:2.5rem; margin-top:clamp(1.6rem,3.5vh,2.4rem); padding-top:clamp(1.4rem,3vh,2rem); border-top:1px solid var(--line); }
 .amores-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:clamp(2rem,5vw,4rem); align-items:start; }
-.amor { display:grid; gap:1.2rem; justify-items:center; text-align:center; }
-.amor h3 { font-family:var(--font-display); text-transform:uppercase; font-size:clamp(1.4rem,3vw,1.9rem); letter-spacing:.03em; color:var(--amber); }
-.amor p { color:var(--cream-dim); max-width:30em; }
-.galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:clamp(1.4rem,3vw,2.4rem); justify-items:center; }
+.amor { display:grid; gap:1.4rem; justify-items:center; text-align:center; }
+.amor-text { max-width:30em; display:grid; gap:.8rem; justify-items:center; }
+.amor-text h3 { font-family:var(--font-display); text-transform:uppercase; font-size:clamp(1.5rem,3vw,2rem); letter-spacing:.03em; color:var(--amber); }
+.amor-text p { color:var(--cream-dim); }
+.galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:clamp(1.6rem,3.5vw,2.8rem); justify-items:center; }
+.gal-stack { display:flex; flex-direction:column; gap:clamp(1.4rem,3vw,2.2rem); align-items:center; }
+.gal-stack figure { margin:0; }
 .notes-intro { display:flex; flex-wrap:wrap; align-items:flex-start; gap:2rem; }
 .notes-bubble { max-width:15rem; margin-top:.4rem; }
 .contact-extras { display:flex; align-items:flex-end; gap:1.5rem; margin-top:2.4rem; max-width:26rem; }
@@ -1019,9 +1026,40 @@ body {
 /* Publication link */
 .pub-link { color:var(--amber); text-decoration:underline; text-underline-offset:3px; }
 
+/* Apolo, centered feature at the end of the About gallery */
+.apolo-solo { max-width:340px; margin:clamp(2.4rem,5vh,3.6rem) auto 0; display:grid; justify-items:center; gap:.2rem; }
+
+/* Apolo strip — photo + note side by side (home & about) */
+.apolo-strip { display:flex; flex-wrap:wrap; align-items:center; gap:clamp(1.6rem,4vw,3.2rem); margin-top:clamp(2.5rem,6vh,4rem); }
+.apolo-strip > figure { margin:0; flex:0 0 auto; width:min(300px,100%); }
+.apolo-strip .sticker-caption { text-align:left; }
+.apolo-text { flex:1 1 300px; display:flex; flex-direction:column; align-items:flex-start; gap:1.1rem; }
+.apolo-text p { color:var(--cream-dim); max-width:34em; font-size:1.05rem; }
+
+/* Extra responsiveness for phones & small tablets */
+@media (max-width:760px){
+  .apolo-strip { justify-content:center; text-align:center; }
+  .apolo-strip > figure { margin-inline:auto; }
+  .apolo-strip .sticker-caption { text-align:center; }
+  .apolo-text { align-items:center; }
+  .quote-card .quote-photo { margin-inline:auto; }
+  .pessoa blockquote { font-size:clamp(1.3rem,6vw,2rem); }
+}
+@media (max-width:480px){
+  .hero-promise { font-size:clamp(2.1rem,10vw,3rem); }
+  .display.chapter-title { font-size:clamp(1.9rem,9vw,2.8rem); }
+  .contact-title { font-size:clamp(3rem,20vw,6rem); }
+  .stats { grid-template-columns:1fr 1fr; }
+  .section, .chapter { padding-block:clamp(2.4rem,6vh,3.6rem); }
+  .sticker-frame .blob { inset:-4%; }
+}
+
 
 /* Reveal is a progressive enhancement: fully visible without JS (SEO/no-JS safe) */
 .rv { opacity:1; transform:none; }
-.js .rv { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+.js .rv { opacity:0; transform:translateY(30px) scale(.98); transition:opacity .7s ease, transform .75s cubic-bezier(.22,1,.36,1); }
 .js .rv.in { opacity:1; transform:none; }
+/* Photos get a touch more travel + a gentle pop */
+.js figure.rv, .js .quote-card.rv { transform:translateY(40px) scale(.94); }
+.js figure.rv.in, .js .quote-card.rv.in { transform:none; }
 @media (prefers-reduced-motion: reduce){ .js .rv{opacity:1;transform:none;transition:none;} }
