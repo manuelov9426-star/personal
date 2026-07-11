@@ -7,7 +7,7 @@
 <meta name="description" content="Nuestro pipeline de trabajo: diagnóstico, hipótesis, experimento, escala y traspaso. Y la lista igual de importante: lo que nos negamos a hacer.">
 <!-- TODO: quitar noindex al lanzar en dominio propio -->
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#07080A">
+<meta name="theme-color" content="#0B0D12">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080A'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='24' font-weight='700' fill='%23B6FF2E' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header class="nav"><div class="wrap nav-inner">
-<a class="nav-logo" href="index.html">sirio<span class="cursor" aria-hidden="true"></span></a>
+<a class="nav-logo" href="index.html"><svg class="logo-pup" aria-hidden="true"><use href="personajes.svg#c-sirio"/></svg>sirio<span class="cursor" aria-hidden="true"></span></a>
 <nav aria-label="Navegación principal"><ul class="nav-links">
 <li><a href="index.html">inicio</a></li>
 <li><a href="servicios.html">servicios</a></li>
@@ -30,9 +30,16 @@
 <main id="contenido">
 
 <section class="hero"><div class="wrap">
+<div class="hero-grid">
+<div>
 <p class="prompt rv" data-typed>$ cat metodo.md</p>
 <h1 class="display rv d1">Menos fe. <span class="alt">Más evidencia.</span></h1>
 <p class="hero-sub rv d2">Somos un equipo pequeño de perfiles técnicos —ciencia de datos, medios, ingeniería, creatividad— que se cansó del teatro de agencia. No vendemos horas ni slides: vendemos decisiones mejor tomadas.</p>
+</div>
+<div class="hero-char rv d2">
+<svg class="char char-bob" role="img" aria-label="Byte, el robot cian del equipo"><use href="personajes.svg#c-byte"/></svg>
+</div>
+</div>
 </div></section>
 
 <section class="chapter"><div class="wrap">
@@ -90,6 +97,14 @@
 <div class="chapter-head rv"><span class="chapter-num">03</span><span class="chapter-meta">quiénes somos · sin culto al fundador</span></div>
 <h2 class="chapter-title rv"><span class="glx" data-text="Un equipo chico con estándares grandes.">Un equipo chico con estándares grandes.</span></h2>
 <p class="lead rv">No vas a encontrar aquí fotos de oficina con plantas ni bios infladas. Lo que importa: perfiles técnicos con años midiendo inversión de medios a gran escala, formación cuantitativa seria y alergia documentada al humo. En la primera llamada hablas directamente con quien va a hacer el trabajo — no con un vendedor.</p>
+<p class="rv" style="font-family:var(--font-m);font-size:.8rem;color:var(--faint)">// el único organigrama que vamos a publicar:</p>
+<div class="cast">
+<figure class="rv" style="--c:var(--acid)"><svg class="char char-bob" role="img" aria-label="Sirio, perro verde con collar"><use href="personajes.svg#c-sirio"/></svg><figcaption><span class="nm">sirio</span><span class="rl">mascota · control de calidad emocional</span></figcaption></figure>
+<figure class="rv d1" style="--c:var(--amber)"><svg class="char char-bob b2" role="img" aria-label="Lupa, zorra con lupa de detective"><use href="personajes.svg#c-lupa"/></svg><figcaption><span class="nm">lupa</span><span class="rl">inferencia causal · encuentra al culpable</span></figcaption></figure>
+<figure class="rv d2" style="--c:var(--cyan)"><svg class="char char-bob b3" role="img" aria-label="Byte, robot cian con antena"><use href="personajes.svg#c-byte"/></svg><figcaption><span class="nm">byte</span><span class="rl">ia &amp; pipelines · no duerme</span></figcaption></figure>
+<figure class="rv d3" style="--c:var(--violet)"><svg class="char char-bob b4" role="img" aria-label="Mega, monstruo violeta con megáfono"><use href="personajes.svg#c-mega"/></svg><figcaption><span class="nm">mega</span><span class="rl">pauta · habla duro, mide más duro</span></figcaption></figure>
+<figure class="rv d3" style="--c:var(--mag)"><svg class="char char-bob" role="img" aria-label="Chispa, bicho magenta con micrófono"><use href="personajes.svg#c-chispa"/></svg><figcaption><span class="nm">chispa</span><span class="rl">creatividad · peligro controlado</span></figcaption></figure>
+</div>
 <ul class="specs rv" role="list">
 <li><b>tamaño:</b> boutique, a propósito</li>
 <li><b>perfil:</b> ciencia de datos + medios + ingeniería</li>

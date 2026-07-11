@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<style>
+.blink{transform-box:fill-box;transform-origin:center}
+.wag{transform-box:fill-box;transform-origin:10% 90%}
+@media (prefers-reduced-motion: no-preference){
+  .blink{animation:c-blink 4.4s infinite}
+  .wag{animation:c-wag 1.4s ease-in-out infinite}
+  .pulse{animation:c-pulse 2s ease-in-out infinite}
+  .twinkle{animation:c-pulse 1.6s ease-in-out infinite}
+}
+@keyframes c-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.12)}}
+@keyframes c-wag{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(14deg)}}
+@keyframes c-pulse{0%,100%{opacity:1}50%{opacity:.2}}
+</style>
+
+<!-- SIRIO · perro mascota · verde -->
+<symbol id="c-sirio" viewBox="0 0 200 200">
+<ellipse cx="100" cy="184" rx="52" ry="8" fill="rgba(0,0,0,.35)"/>
+<path class="wag" d="M148,126 q28,-4 32,-30 q12,30 -16,48 q-12,-6 -16,-18 z" fill="#4FA313"/>
+<path d="M60,44 q-22,14 -12,46 q18,0 28,-16 q-4,-20 -16,-30 z" fill="#4FA313"/>
+<path d="M140,44 q22,14 12,46 q-18,0 -28,-16 q4,-20 16,-30 z" fill="#4FA313"/>
+<rect x="48" y="38" width="104" height="130" rx="50" fill="#86E62C"/>
+<g class="blink"><ellipse cx="80" cy="86" rx="9" ry="11" fill="#fff"/><circle cx="82" cy="88" r="4.5" fill="#101010"/><circle cx="83.5" cy="85.5" r="1.6" fill="#fff"/></g>
+<g class="blink"><ellipse cx="120" cy="86" rx="9" ry="11" fill="#fff"/><circle cx="122" cy="88" r="4.5" fill="#101010"/><circle cx="123.5" cy="85.5" r="1.6" fill="#fff"/></g>
+<ellipse cx="100" cy="114" rx="24" ry="17" fill="#C8FF5A"/>
+<ellipse cx="100" cy="106" rx="7" ry="5.5" fill="#173307"/>
+<path d="M90,119 q10,9 20,0" stroke="#173307" stroke-width="3" fill="none" stroke-linecap="round"/>
+<path d="M96,123 q4,9 9,0 z" fill="#FF4FA3"/>
+<rect x="62" y="148" width="76" height="11" rx="5.5" fill="#173307"/>
+<circle cx="100" cy="164" r="7" fill="#FF4FA3"/>
+<rect x="64" y="160" width="24" height="16" rx="8" fill="#4FA313"/>
+<rect x="112" y="160" width="24" height="16" rx="8" fill="#4FA313"/>
+</symbol>
+
+<!-- LUPA · zorra detective · ámbar -->
+<symbol id="c-lupa" viewBox="0 0 200 200">
+<ellipse cx="100" cy="184" rx="52" ry="8" fill="rgba(0,0,0,.35)"/>
+<path class="wag" d="M148,120 q34,0 38,-32 q14,40 -22,58 q-12,-10 -16,-26 z" fill="#FFB03A"/>
+<circle cx="172" cy="132" r="11" fill="#FFE0AD"/>
+<path d="M58,62 L66,18 L94,50 z" fill="#FFB03A"/>
+<path d="M61,42 L66,18 L82,36 z" fill="#7A3E08"/>
+<path d="M142,62 L134,18 L106,50 z" fill="#FFB03A"/>
+<path d="M139,42 L134,18 L118,36 z" fill="#7A3E08"/>
+<rect x="50" y="44" width="100" height="124" rx="48" fill="#FFB03A"/>
+<ellipse cx="100" cy="122" rx="34" ry="24" fill="#FFE0AD"/>
+<g class="blink"><ellipse cx="78" cy="88" rx="8.5" ry="10.5" fill="#fff"/><circle cx="80" cy="90" r="4.2" fill="#101010"/><circle cx="81.5" cy="87.5" r="1.5" fill="#fff"/></g>
+<g class="blink"><ellipse cx="122" cy="90" rx="11" ry="13" fill="#fff"/><circle cx="124" cy="92" r="6" fill="#101010"/><circle cx="126" cy="89" r="2" fill="#fff"/></g>
+<ellipse cx="100" cy="112" rx="6.5" ry="5" fill="#4A2405"/>
+<path d="M92,122 q8,7 16,0" stroke="#4A2405" stroke-width="3" fill="none" stroke-linecap="round"/>
+<circle cx="122" cy="90" r="20" fill="rgba(79,227,255,.16)" stroke="#4FE3FF" stroke-width="4"/>
+<rect x="132" y="102" width="10" height="36" rx="5" transform="rotate(-40 137 104)" fill="#1E2733"/>
+<rect x="66" y="160" width="24" height="16" rx="8" fill="#C97A16"/>
+<rect x="110" y="160" width="24" height="16" rx="8" fill="#C97A16"/>
+</symbol>
+
+<!-- BYTE · robot · cian -->
+<symbol id="c-byte" viewBox="0 0 200 200">
+<ellipse cx="100" cy="180" rx="52" ry="8" fill="rgba(0,0,0,.35)"/>
+<rect x="97" y="18" width="6" height="24" rx="3" fill="#2B7A8C"/>
+<circle class="pulse" cx="100" cy="14" r="7" fill="#FF4FA3"/>
+<rect x="34" y="72" width="16" height="46" rx="8" fill="#2B7A8C"/>
+<rect x="150" y="72" width="16" height="46" rx="8" fill="#2B7A8C"/>
+<rect x="52" y="40" width="96" height="110" rx="26" fill="#4FE3FF"/>
+<rect x="66" y="60" width="68" height="46" rx="10" fill="#0B2830"/>
+<rect class="blink" x="82" y="72" width="9" height="13" rx="2" fill="#B6FF2E"/>
+<rect class="blink" x="109" y="72" width="9" height="13" rx="2" fill="#B6FF2E"/>
+<rect x="85" y="92" width="6" height="5" rx="1.5" fill="#B6FF2E"/>
+<rect x="92" y="95" width="16" height="5" rx="2" fill="#B6FF2E"/>
+<rect x="109" y="92" width="6" height="5" rx="1.5" fill="#B6FF2E"/>
+<circle cx="78" cy="126" r="5.5" fill="#FF4FA3"/>
+<rect x="92" y="121" width="30" height="9" rx="4.5" fill="#2B7A8C"/>
+<circle cx="78" cy="160" r="14" fill="#1E2733"/>
+<circle cx="122" cy="160" r="14" fill="#1E2733"/>
+<circle cx="78" cy="160" r="5" fill="#4FE3FF"/>
+<circle cx="122" cy="160" r="5" fill="#4FE3FF"/>
+</symbol>
+
+<!-- MEGA · monstruo de la pauta · violeta -->
+<symbol id="c-mega" viewBox="0 0 200 200">
+<ellipse cx="96" cy="182" rx="50" ry="8" fill="rgba(0,0,0,.35)"/>
+<path d="M70,54 q-8,-20 8,-28" stroke="#6B4FD8" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="80" cy="24" r="5.5" fill="#FF4FA3"/>
+<path d="M116,52 q8,-20 -6,-28" stroke="#6B4FD8" stroke-width="6" fill="none" stroke-linecap="round"/>
+<circle cx="108" cy="22" r="5.5" fill="#B6FF2E"/>
+<rect x="46" y="50" width="96" height="116" rx="44" fill="#9D7BFF"/>
+<g class="blink"><ellipse cx="90" cy="96" rx="16" ry="18" fill="#fff"/><circle cx="94" cy="99" r="7" fill="#101010"/><circle cx="96.5" cy="95.5" r="2.4" fill="#fff"/></g>
+<path d="M72,128 q16,16 34,2 q-2,16 -17,16 q-15,0 -17,-18 z" fill="#3B2373"/>
+<rect x="84" y="128" width="9" height="8" rx="2" fill="#fff"/>
+<g transform="rotate(-16 150 96)">
+<rect x="126" y="88" width="16" height="20" rx="5" fill="#6B4FD8"/>
+<path d="M142,82 L172,66 L172,126 L142,110 z" fill="#FFB03A"/>
+</g>
+<path class="pulse" d="M180,66 q12,22 0,44" stroke="#B6FF2E" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path class="pulse" style="animation-delay:.5s" d="M190,56 q18,32 0,64" stroke="#B6FF2E" stroke-width="4" fill="none" stroke-linecap="round" opacity=".7"/>
+<rect x="60" y="158" width="24" height="16" rx="8" fill="#6B4FD8"/>
+<rect x="106" y="158" width="24" height="16" rx="8" fill="#6B4FD8"/>
+</symbol>
+
+<!-- CHISPA · bicho creativo · magenta -->
+<symbol id="c-chispa" viewBox="0 0 200 200">
+<ellipse cx="100" cy="184" rx="52" ry="8" fill="rgba(0,0,0,.35)"/>
+<path d="M66,52 L72,20 L88,44 z" fill="#D62E8C"/>
+<path d="M88,46 L100,14 L112,46 z" fill="#D62E8C"/>
+<path d="M112,44 L128,20 L134,52 z" fill="#D62E8C"/>
+<rect x="52" y="40" width="96" height="126" rx="46" fill="#FF4FA3"/>
+<g class="blink"><ellipse cx="82" cy="88" rx="10" ry="12" fill="#fff"/><circle cx="84" cy="91" r="5" fill="#101010"/><circle cx="85.5" cy="88" r="1.8" fill="#fff"/></g>
+<g class="blink"><ellipse cx="118" cy="84" rx="13" ry="15" fill="#fff"/><circle cx="120" cy="88" r="6" fill="#101010"/><circle cx="122" cy="84.5" r="2.2" fill="#fff"/></g>
+<path d="M74,118 q24,22 50,-2 q-4,24 -25,24 q-20,0 -25,-22 z" fill="#5C0F35"/>
+<rect x="92" y="122" width="10" height="9" rx="2" fill="#fff"/>
+<g transform="rotate(14 140 132)">
+<rect x="132" y="120" width="13" height="36" rx="6.5" fill="#1E2733"/>
+<circle cx="138.5" cy="112" r="13" fill="#C4CDD6"/>
+<path d="M129,108 h19 M129,114 h19" stroke="#8B95A1" stroke-width="2"/>
+</g>
+<path class="twinkle" d="M40,58 l4,10 10,4 -10,4 -4,10 -4,-10 -10,-4 10,-4 z" fill="#B6FF2E"/>
+<circle class="twinkle" style="animation-delay:.4s" cx="166" cy="50" r="4" fill="#4FE3FF"/>
+<path class="twinkle" style="animation-delay:.8s" d="M42,132 h12 M48,126 v12" stroke="#FFB03A" stroke-width="3.5" stroke-linecap="round"/>
+<rect x="66" y="158" width="24" height="16" rx="8" fill="#D62E8C"/>
+<rect x="110" y="158" width="24" height="16" rx="8" fill="#D62E8C"/>
+</symbol>
+</svg>

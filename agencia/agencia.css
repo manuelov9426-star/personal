@@ -5,23 +5,26 @@
    ============================================================ */
 
 :root{
-  --bg0:#07080A;
-  --bg1:#0C0E11;
-  --panel:#0F1216;
-  --panel2:#12161B;
-  --line:#20242C;
-  --line2:#2C333D;
+  --bg0:#0B0D12;
+  --bg1:#101319;
+  --panel:#12161D;
+  --panel2:#161B23;
+  --line:#232936;
+  --line2:#303845;
   --txt:#E9EEF3;
   --dim:#9AA5B1;
-  --faint:#5F6975;
+  --faint:#66707D;
   --acid:#B6FF2E;
   --acid-soft:rgba(182,255,46,.14);
   --acid-line:rgba(182,255,46,.35);
   --mag:#FF4FA3;
+  --cyan:#4FE3FF;
+  --amber:#FFB03A;
+  --violet:#9D7BFF;
   --font-d:"Space Grotesk","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --font-m:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
   --wrap:72rem;
-  --r:6px;
+  --r:12px;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -39,14 +42,14 @@ body{
   overflow-x:hidden;
 }
 
-/* retícula de fondo, sutil */
+/* retícula de fondo, muy sutil */
 body::before{
   content:"";
   position:fixed;inset:0;z-index:0;pointer-events:none;
   background-image:
-    linear-gradient(rgba(255,255,255,.024) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.024) 1px,transparent 1px);
-  background-size:56px 56px;
+    linear-gradient(rgba(255,255,255,.016) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.016) 1px,transparent 1px);
+  background-size:72px 72px;
 }
 
 ::selection{background:var(--acid);color:#0A0A0A}
@@ -107,9 +110,11 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.85rem;padding-bottom:.85rem}
 .nav-logo{
+  display:inline-flex;align-items:center;gap:.5rem;
   font-family:var(--font-m);font-weight:700;font-size:1.05rem;
   text-decoration:none;letter-spacing:.01em;color:var(--txt);
 }
+.logo-pup{width:28px;height:28px;flex:none}
 .nav-logo:hover .cursor{background:var(--mag)}
 .nav-links{display:flex;flex-wrap:wrap;gap:.2rem .4rem;list-style:none;margin:0;padding:0}
 .nav-links a{
@@ -151,7 +156,7 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
   display:inline-block;
   font-family:var(--font-m);font-size:.88rem;font-weight:500;
   text-decoration:none;letter-spacing:.02em;
-  padding:.85rem 1.5rem;border-radius:var(--r);
+  padding:.85rem 1.7rem;border-radius:999px;
   border:1px solid var(--line2);color:var(--txt);
   background:transparent;
   transition:transform .15s ease,box-shadow .15s ease,border-color .15s,color .15s,background .15s;
@@ -166,7 +171,7 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .term{
   background:var(--panel);
   border:1px solid var(--line);
-  border-radius:8px;
+  border-radius:16px;
   overflow:hidden;
   transition:transform .2s ease,border-color .2s,box-shadow .2s;
 }
@@ -185,12 +190,12 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .term-body{padding:clamp(1.1rem,2.5vw,1.6rem)}
 
 /* ---------- secciones capítulo ---------- */
-.chapter{padding:clamp(3.5rem,9vh,6.5rem) 0;border-top:1px solid var(--line)}
+.chapter{padding:clamp(4.5rem,11vh,8rem) 0;border-top:1px solid var(--line)}
 .chapter-head{
   display:flex;align-items:baseline;gap:1rem;margin-bottom:1.1rem;
   font-family:var(--font-m);font-size:.8rem;
 }
-.chapter-num{color:var(--acid)}
+.chapter-num{color:var(--c,var(--acid))}
 .chapter-num::before{content:"// "}
 .chapter-meta{color:var(--faint);letter-spacing:.04em;text-transform:lowercase}
 .chapter-title{font-size:clamp(1.9rem,4.6vw,3.2rem);letter-spacing:-.03em;max-width:18em}
@@ -363,6 +368,64 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .status-inner a{color:var(--dim);text-decoration:none;border-bottom:1px solid var(--line2)}
 .status-inner a:hover{color:var(--acid);border-color:var(--acid-line)}
 .status .host{color:var(--acid)}
+
+/* ---------- personajes ---------- */
+.char{display:block}
+.char-bob{animation:bob 4.2s ease-in-out infinite}
+.char-bob.b2{animation-delay:.6s}
+.char-bob.b3{animation-delay:1.2s}
+.char-bob.b4{animation-delay:1.8s}
+@keyframes bob{50%{transform:translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.char-bob{animation:none}}
+
+/* hero con personaje al lado del texto */
+.hero-char{display:flex;justify-content:center;align-items:center}
+.hero-char .char{width:clamp(150px,26vw,230px)}
+
+/* personaje sentado sobre la ventana del gráfico */
+.hero-side{position:relative;margin-top:3.2rem}
+.perch{position:absolute;top:-86px;right:26px;width:104px;z-index:2}
+@media (max-width:56rem){.hero-side{margin-top:4.2rem}}
+
+/* tarjetas de servicio con personaje */
+.svc2-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:2.6rem 1.4rem;margin-top:3.6rem;
+}
+@media (max-width:52rem){.svc2-grid{grid-template-columns:1fr}}
+.svc2{
+  position:relative;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:1.6rem 1.6rem 1.5rem;
+  transition:transform .2s ease,border-color .2s,box-shadow .2s;
+}
+.svc2:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 16px 36px rgba(0,0,0,.35)}
+@media (prefers-reduced-motion:reduce){.svc2:hover{transform:none}}
+.svc2 .char{position:absolute;top:-46px;right:16px;width:92px}
+.svc2 .svc-path{font-family:var(--font-m);font-size:.75rem;color:var(--c,var(--acid));margin:0 0 .6rem}
+.svc2 h3{font-size:1.25rem;margin-bottom:.5rem;padding-right:5.5rem}
+.svc2 p{color:var(--dim);font-size:.98rem}
+.svc2 .chips li{border-color:color-mix(in srgb,var(--c,var(--acid)) 35%,transparent)}
+
+/* el elenco: ficha de equipo tipo hoja de personajes */
+.cast{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));
+  gap:1.2rem;margin-top:2.6rem;
+}
+.cast figure{
+  margin:0;text-align:center;
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:1.5rem 1rem 1.2rem;
+}
+.cast .char{width:104px;margin:0 auto}
+.cast figcaption{margin-top:.9rem;line-height:1.35}
+.cast .nm{font-family:var(--font-m);font-weight:700;color:var(--c,var(--acid))}
+.cast .rl{display:block;margin-top:.25rem;font-family:var(--font-m);font-size:.72rem;color:var(--dim)}
+
+/* personaje en los cierres */
+.endcap .char{width:clamp(110px,15vw,140px);margin:0 auto 1.4rem}
 
 /* ---------- reveal on scroll ---------- */
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
