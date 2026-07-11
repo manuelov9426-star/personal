@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Método — SIRIO · cómo trabajamos y qué no hacemos</title>
+<meta name="description" content="Nuestro pipeline de trabajo: diagnóstico, hipótesis, experimento, escala y traspaso. Y la lista igual de importante: lo que nos negamos a hacer.">
+<!-- TODO: quitar noindex al lanzar en dominio propio -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#07080A">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2307080A'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='24' font-weight='700' fill='%23B6FF2E' text-anchor='middle'%3E%3E_%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="agencia.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="nav"><div class="wrap nav-inner">
+<a class="nav-logo" href="index.html">sirio<span class="cursor" aria-hidden="true"></span></a>
+<nav aria-label="Navegación principal"><ul class="nav-links">
+<li><a href="index.html">inicio</a></li>
+<li><a href="servicios.html">servicios</a></li>
+<li><a href="metodo.html" class="active" aria-current="page">método</a></li>
+<li><a href="casos.html">casos</a></li>
+<li><a href="contacto.html">contacto</a></li>
+</ul></nav>
+</div></header>
+
+<main id="contenido">
+
+<section class="hero"><div class="wrap">
+<p class="prompt rv" data-typed>$ cat metodo.md</p>
+<h1 class="display rv d1">Menos fe. <span class="alt">Más evidencia.</span></h1>
+<p class="hero-sub rv d2">Somos un equipo pequeño de perfiles técnicos —ciencia de datos, medios, ingeniería, creatividad— que se cansó del teatro de agencia. No vendemos horas ni slides: vendemos decisiones mejor tomadas.</p>
+</div></section>
+
+<section class="chapter"><div class="wrap">
+<div class="chapter-head rv"><span class="chapter-num">01</span><span class="chapter-meta">el pipeline · cinco pasos, cada uno con salida verificable</span></div>
+<h2 class="chapter-title rv"><span class="glx" data-text="Así corre un proyecto con nosotros.">Así corre un proyecto con nosotros.</span></h2>
+<ol class="pipeline">
+<li class="rv"><span class="cmd">make diagnostico</span>
+<h3>Auditamos datos, pauta y medición actual</h3>
+<p>Dos a tres semanas revisando cómo se mide hoy: tracking, atribución, estructura de cuentas, calidad de datos. Encontramos qué se está midiendo mal — siempre hay algo, y suele ser caro.</p>
+<span class="out">→ salida: <b>mapa de fugas</b> — dónde se pierde plata o se decide a ciegas, priorizado por impacto.</span></li>
+<li class="rv"><span class="cmd">make hipotesis</span>
+<h3>Convertimos el problema en apuestas concretas</h3>
+<p>Cada oportunidad se escribe como una apuesta: qué creemos, cuánto vale si es cierto, qué evidencia la confirmaría o la mataría. Sin esta disciplina, todo proyecto se convierte en "hagamos cosas".</p>
+<span class="out">→ salida: <b>backlog de apuestas</b> con valor esperado y costo de averiguarlo.</span></li>
+<li class="rv"><span class="cmd">make experimento</span>
+<h3>Probamos con contrafactual</h3>
+<p>Grupo de control, geo-split, lift test o modelo — la herramienta que pida la pregunta, no la que esté de moda. Presupuesto acotado y criterio de éxito firmado antes de encender nada.</p>
+<span class="out">→ salida: <b>lectura causal</b> — funcionó / no funcionó / no se pudo saber (también es una respuesta honesta).</span></li>
+<li class="rv"><span class="cmd">make escala</span>
+<h3>Lo que demuestra incrementalidad recibe presupuesto</h3>
+<p>Y lo que no, se apaga sin drama. Este paso es donde una agencia tradicional pelearía por defender su campaña. Nosotros no operamos por comisión sobre inversión: no tenemos incentivo para inflarte el gasto.</p>
+<span class="out">→ salida: <b>plan de reasignación</b> con el antes y el después del presupuesto.</span></li>
+<li class="rv"><span class="cmd">make traspaso</span>
+<h3>Te dejamos el control</h3>
+<p>Código comentado, documentación, playbooks y sesiones con tu equipo. El objetivo explícito es que puedas seguir sin nosotros — y que si te quedas, sea porque quieres, no porque no puedes salir.</p>
+<span class="out">→ salida: <b>repositorio + playbook</b> operables por tu equipo.</span></li>
+</ol>
+</div></section>
+
+<section class="chapter"><div class="wrap">
+<div class="chapter-head rv"><span class="chapter-num">02</span><span class="chapter-meta">lo que no hacemos · igual de importante</span></div>
+<h2 class="chapter-title rv"><span class="glx" data-text="La lista negra.">La lista negra.</span></h2>
+<p class="lead rv">Media industria vive de estas prácticas. Nosotros preferimos perder el contrato.</p>
+<div class="svc-grid">
+<div class="term rv"><div class="term-bar"><span class="term-dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="term-name">no_hacemos.txt</span></div>
+<div class="term-body"><ul class="list-no">
+<li>Prometer ROI antes de conocer tu línea base</li>
+<li>Reportes de 60 slides que nadie lee</li>
+<li>Métricas de vanidad como prueba de éxito</li>
+<li>Dashboards que nadie abre después del kickoff</li>
+<li>Permanencias eternas y cajas negras metodológicas</li>
+</ul></div></div>
+<div class="term rv d1"><div class="term-bar"><span class="term-dots" aria-hidden="true"><span></span><span></span><span></span></span><span class="term-name">si_hacemos.txt</span></div>
+<div class="term-body"><ul class="list-ok">
+<li>Decirte que algo no funcionó, con evidencia</li>
+<li>Recomendarte gastar menos si eso indica el experimento</li>
+<li>Entregarte el código y enseñarte a usarlo</li>
+<li>Escribir los supuestos donde todos los vean</li>
+<li>Contratos que puedes terminar cuando quieras</li>
+</ul></div></div>
+</div>
+</div></section>
+
+<section class="chapter"><div class="wrap">
+<div class="chapter-head rv"><span class="chapter-num">03</span><span class="chapter-meta">quiénes somos · sin culto al fundador</span></div>
+<h2 class="chapter-title rv"><span class="glx" data-text="Un equipo chico con estándares grandes.">Un equipo chico con estándares grandes.</span></h2>
+<p class="lead rv">No vas a encontrar aquí fotos de oficina con plantas ni bios infladas. Lo que importa: perfiles técnicos con años midiendo inversión de medios a gran escala, formación cuantitativa seria y alergia documentada al humo. En la primera llamada hablas directamente con quien va a hacer el trabajo — no con un vendedor.</p>
+<ul class="specs rv" role="list">
+<li><b>tamaño:</b> boutique, a propósito</li>
+<li><b>perfil:</b> ciencia de datos + medios + ingeniería</li>
+<li><b>alcance:</b> LATAM · remoto global</li>
+<li><b>ventas:</b> hace el trabajo la misma gente que te atiende</li>
+</ul>
+</div></section>
+
+<section class="endcap"><div class="wrap">
+<h2 class="display rv">El método se entiende mejor <span class="alt">aplicado a tus números.</span></h2>
+<p class="rv d1" style="margin-top:1.2rem">Treinta minutos. Salimos con una hipótesis sobre tu medición, nos contrates o no.</p>
+<p class="rv d2" style="margin-top:2rem">
+<a class="btn primary" href="https://wa.me/573508748103?text=Hola%2C%20quiero%20agendar%20una%20llamada%20de%2030%20minutos." rel="noopener" target="_blank">Agendar por WhatsApp</a>
+<a class="btn" href="casos.html">Ver cómo pensamos</a>
+</p>
+</div></section>
+
+</main>
+
+<footer class="status"><div class="wrap status-inner">
+<span><span class="host">sirio@bogota</span>:~$ señal, no ruido</span>
+<span data-clock></span>
+<span><a href="mailto:manuelov9426@gmail.com">correo</a> · <a href="https://wa.me/573508748103" rel="noopener" target="_blank">whatsapp</a></span>
+</div></footer>
+
+<script src="agencia.js"></script>
+</body>
+</html>
