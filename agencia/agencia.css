@@ -52,8 +52,20 @@ body::before{
   background-size:72px 72px;
 }
 
+/* grano de película, muy leve */
+body::after{
+  content:"";position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 ::selection{background:var(--acid);color:#0A0A0A}
 :focus-visible{outline:2px solid var(--acid);outline-offset:3px;border-radius:2px}
+
+/* scrollbar a juego */
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:var(--bg0)}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:6px;border:2px solid var(--bg0)}
+::-webkit-scrollbar-thumb:hover{background:var(--acid)}
 
 img,svg{max-width:100%;height:auto}
 a{color:var(--txt)}
@@ -108,13 +120,18 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
   -webkit-backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:.85rem;padding-bottom:.85rem}
+.nav-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.4rem 1rem;padding-top:.85rem;padding-bottom:.85rem}
+/* barra de progreso de lectura */
+.nav::after{
+  content:"";position:absolute;left:0;bottom:-1px;height:2px;
+  width:calc(var(--sp,0)*100%);background:var(--acid);
+  transition:width .1s linear;
+}
 .nav-logo{
   display:inline-flex;align-items:center;gap:.5rem;
   font-family:var(--font-m);font-weight:700;font-size:1.05rem;
   text-decoration:none;letter-spacing:.01em;color:var(--txt);
 }
-.logo-pup{width:28px;height:28px;flex:none}
 .nav-logo:hover .cursor{background:var(--mag)}
 .nav-links{display:flex;flex-wrap:wrap;gap:.2rem .4rem;list-style:none;margin:0;padding:0}
 .nav-links a{
@@ -314,9 +331,10 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .case .term-body h3{font-size:clamp(1.2rem,2.4vw,1.55rem)}
 .badge{
   display:inline-block;
-  font-family:var(--font-m);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--mag);border:1px solid rgba(255,79,163,.4);border-radius:4px;
-  padding:.22rem .55rem;margin-bottom:.9rem;
+  font-family:var(--font-m);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mag);border:2px solid rgba(255,79,163,.55);border-radius:6px;
+  padding:.28rem .6rem;margin-bottom:.9rem;
+  transform:rotate(-2deg);
 }
 .case-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.2rem}
 @media (max-width:52rem){.case-steps{grid-template-columns:repeat(2,1fr)}}
@@ -369,28 +387,35 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .status-inner a:hover{color:var(--acid);border-color:var(--acid-line)}
 .status .host{color:var(--acid)}
 
-/* ---------- personajes ---------- */
-.char{display:block}
-.char-bob{animation:bob 4.2s ease-in-out infinite}
-.char-bob.b2{animation-delay:.6s}
-.char-bob.b3{animation-delay:1.2s}
-.char-bob.b4{animation-delay:1.8s}
-@keyframes bob{50%{transform:translateY(-7px)}}
-@media (prefers-reduced-motion:reduce){.char-bob{animation:none}}
+/* ---------- stickers ---------- */
+.stk{
+  display:block;
+  transform:rotate(var(--rot,-5deg));
+  filter:drop-shadow(5px 7px 0 rgba(0,0,0,.45));
+  transition:transform .25s ease;
+}
+.stk:hover{transform:rotate(0deg) scale(1.05)}
+@media (prefers-reduced-motion:reduce){.stk,.stk:hover{transition:none;transform:rotate(var(--rot,-5deg))}}
 
-/* hero con personaje al lado del texto */
+/* sticker junto al texto del hero */
 .hero-char{display:flex;justify-content:center;align-items:center}
-.hero-char .char{width:clamp(150px,26vw,230px)}
+.hero-char .stk{width:clamp(130px,20vw,190px)}
 
-/* personaje sentado sobre la ventana del gráfico */
-.hero-side{position:relative;margin-top:3.2rem}
-.perch{position:absolute;top:-86px;right:26px;width:104px;z-index:2}
-@media (max-width:56rem){.hero-side{margin-top:4.2rem}}
+.hero-side{position:relative;margin-top:1rem}
+@media (max-width:56rem){.hero-side{margin-top:2.5rem}}
 
-/* tarjetas de servicio con personaje */
+/* sello circular giratorio */
+.seal{position:absolute;top:-58px;right:-14px;width:128px;height:128px;z-index:2;pointer-events:none}
+.seal text{font-family:var(--font-m);font-size:12.5px;letter-spacing:.22em;fill:var(--acid);text-transform:uppercase}
+.seal .seal-spin{transform-box:fill-box;transform-origin:center;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.seal .seal-spin{animation:none}}
+@media (max-width:56rem){.seal{width:104px;height:104px;top:-46px;right:-6px}}
+
+/* tarjetas de servicio con sticker */
 .svc2-grid{
   display:grid;grid-template-columns:repeat(2,1fr);
-  gap:2.6rem 1.4rem;margin-top:3.6rem;
+  gap:2.6rem 1.4rem;margin-top:3.4rem;
 }
 @media (max-width:52rem){.svc2-grid{grid-template-columns:1fr}}
 .svc2{
@@ -403,13 +428,13 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 }
 .svc2:hover{transform:translateY(-4px);border-color:var(--line2);box-shadow:0 16px 36px rgba(0,0,0,.35)}
 @media (prefers-reduced-motion:reduce){.svc2:hover{transform:none}}
-.svc2 .char{position:absolute;top:-46px;right:16px;width:92px}
+.svc2 .stk{position:absolute;top:-34px;right:18px;width:76px}
 .svc2 .svc-path{font-family:var(--font-m);font-size:.75rem;color:var(--c,var(--acid));margin:0 0 .6rem}
-.svc2 h3{font-size:1.25rem;margin-bottom:.5rem;padding-right:5.5rem}
+.svc2 h3{font-size:1.25rem;margin-bottom:.5rem;padding-right:4.5rem}
 .svc2 p{color:var(--dim);font-size:.98rem}
 .svc2 .chips li{border-color:color-mix(in srgb,var(--c,var(--acid)) 35%,transparent)}
 
-/* el elenco: ficha de equipo tipo hoja de personajes */
+/* organigrama de stickers */
 .cast{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));
   gap:1.2rem;margin-top:2.6rem;
@@ -417,15 +442,42 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .cast figure{
   margin:0;text-align:center;
   background:var(--panel);border:1px solid var(--line);border-radius:18px;
-  padding:1.5rem 1rem 1.2rem;
+  padding:1.6rem 1rem 1.3rem;
 }
-.cast .char{width:104px;margin:0 auto}
-.cast figcaption{margin-top:.9rem;line-height:1.35}
-.cast .nm{font-family:var(--font-m);font-weight:700;color:var(--c,var(--acid))}
+.cast .stk{width:86px;margin:0 auto}
+.cast figcaption{margin-top:1rem;line-height:1.35}
+.cast .nm{font-family:var(--font-m);font-weight:700;color:var(--c,var(--acid));text-transform:uppercase;letter-spacing:.06em;font-size:.85rem}
 .cast .rl{display:block;margin-top:.25rem;font-family:var(--font-m);font-size:.72rem;color:var(--dim)}
 
-/* personaje en los cierres */
-.endcap .char{width:clamp(110px,15vw,140px);margin:0 auto 1.4rem}
+/* sticker en los cierres */
+.endcap .stk{width:clamp(96px,12vw,120px);margin:0 auto 1.6rem}
+
+/* ---------- storytelling ---------- */
+.story{border-top:1px solid var(--line)}
+.story-panel{
+  min-height:min(88vh,52rem);
+  display:flex;align-items:center;
+  padding:clamp(3rem,8vh,5rem) 0;
+  position:relative;
+}
+.story-panel + .story-panel{border-top:1px dashed var(--line)}
+.story-kicker{font-family:var(--font-m);font-size:.8rem;color:var(--faint);margin-bottom:1.4rem}
+.story-line{
+  font-size:clamp(2.4rem,8.5vw,6.2rem);
+  line-height:.98;letter-spacing:-.04em;font-weight:700;
+  max-width:12em;margin:0;
+  color:transparent;-webkit-text-stroke:1.5px var(--faint);
+  text-wrap:balance;
+}
+.story-line em{font-style:normal;color:var(--txt);-webkit-text-stroke:0}
+.story-line .em-acid{color:var(--acid)}
+.story-line .em-mag{color:var(--mag)}
+.story-panel.flip .wrap{display:flex;justify-content:flex-end}
+.story-panel.flip .story-inner{text-align:right}
+.story-panel.finale .story-line{color:var(--acid);-webkit-text-stroke:0}
+.story-inner{position:relative}
+.story-stk{position:absolute;width:clamp(70px,9vw,110px);pointer-events:none}
+@media (max-width:44rem){.story-stk{display:none}}
 
 /* ---------- reveal on scroll ---------- */
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}

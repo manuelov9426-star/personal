@@ -40,6 +40,19 @@
     })();
   });
 
+  /* Barra de progreso de lectura bajo la nav */
+  var ticking = false;
+  var paintProgress = function () {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+    document.documentElement.style.setProperty("--sp", p.toFixed(4));
+    ticking = false;
+  };
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(paintProgress); }
+  }, { passive: true });
+  paintProgress();
+
   /* Reloj local en el statusline */
   var clock = document.querySelector("[data-clock]");
   if (clock) {
