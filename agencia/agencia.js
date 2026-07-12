@@ -1,4 +1,4 @@
-/* SIRIO — microinteracciones. Todo degrada bien sin JS y respeta prefers-reduced-motion. */
+/* MO Agency — microinteracciones. Todo degrada bien sin JS y respeta prefers-reduced-motion. */
 (function () {
   "use strict";
 
