@@ -479,6 +479,52 @@ h1,h2,h3{margin:0 0 .6em;line-height:1.08;letter-spacing:-.02em;font-weight:700}
 .story-stk{position:absolute;width:clamp(70px,9vw,110px);pointer-events:none}
 @media (max-width:44rem){.story-stk{display:none}}
 
+/* ---------- microcopy bajo el CTA ---------- */
+.cta-note{font-family:var(--font-m);font-size:.75rem;color:var(--faint);margin-top:1rem}
+
+/* ---------- escalera de ofertas ---------- */
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.6rem}
+@media (max-width:52rem){.ladder{grid-template-columns:1fr}}
+.ladder .step{
+  background:var(--panel);border:1px solid var(--line);border-radius:18px;
+  padding:1.6rem;
+  transition:transform .2s ease,border-color .2s;
+}
+.ladder .step:hover{transform:translateY(-3px);border-color:var(--line2)}
+@media (prefers-reduced-motion:reduce){.ladder .step:hover{transform:none}}
+.ladder .step-num{font-family:var(--font-m);font-size:.75rem;color:var(--c,var(--acid));letter-spacing:.04em;text-transform:lowercase}
+.ladder h3{font-size:1.2rem;margin:.55rem 0 .5rem}
+.ladder p{color:var(--dim);font-size:.95rem;margin:0}
+
+/* ---------- FAQ ---------- */
+.faq{margin-top:2.4rem;display:grid;gap:.8rem}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px}
+.faq details[open]{border-color:var(--line2)}
+.faq summary{
+  cursor:pointer;padding:1.05rem 1.3rem;font-weight:700;
+  list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-m);color:var(--acid);font-size:1.15rem;flex:none;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--acid)}
+.faq .faq-a{padding:0 1.3rem 1.15rem;color:var(--dim);margin:0;max-width:62em}
+@media (prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
+
+/* ---------- barra CTA fija en móvil ---------- */
+.cta-bar{display:none}
+@media (max-width:44rem){
+  body{padding-bottom:4.6rem}
+  .cta-bar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:55;
+    padding:.6rem .9rem calc(.6rem + env(safe-area-inset-bottom));
+    background:rgba(11,13,18,.94);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-top:1px solid var(--line);
+  }
+  .cta-bar .btn{flex:1;text-align:center;padding:.8rem 1rem}
+}
+
 /* ---------- reveal on scroll ---------- */
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
