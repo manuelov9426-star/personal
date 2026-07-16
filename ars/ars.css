@@ -100,7 +100,8 @@ a{color:var(--marfil)}
 .lockup .name{font-family:var(--serif);font-weight:600;font-size:1.7rem;color:var(--marfil)}
 .lockup .apellido{
   display:block;margin-top:.3rem;
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+  font-family:var(--serif);font-weight:500;font-size:.62rem;
+  letter-spacing:.42em;text-transform:uppercase;
   color:var(--piedra);
 }
 .nav-links{display:flex;flex-wrap:wrap;gap:.2rem 1.6rem;list-style:none;margin:0;padding:0;align-items:baseline}
@@ -131,8 +132,8 @@ a{color:var(--marfil)}
 }
 .descriptor{
   display:block;margin-top:clamp(1rem,2.5vh,1.5rem);
-  font-family:var(--mono);font-size:.82rem;font-weight:400;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--piedra);
+  font-family:var(--serif);font-weight:500;font-size:.92rem;
+  letter-spacing:.38em;text-transform:uppercase;color:var(--piedra);
 }
 .pitch{
   font-family:var(--serif);font-weight:500;
@@ -193,6 +194,8 @@ a{color:var(--marfil)}
   letter-spacing:-.015em;max-width:18em;
   margin:0 0 1.2rem;
 }
+.section-title em{font-style:italic;font-weight:500;color:var(--ambar)}
+.light .section-title em{color:var(--link-luz)}
 .section-sub{max-width:58ch;color:var(--piedra);margin:0}
 
 /* ---------- secciones claras + borde rasgado (el "ruido") ---------- */
@@ -291,21 +294,80 @@ a{color:var(--marfil)}
 .naming em{font-style:italic;font-weight:600;color:var(--ambar)}
 .naming + p{margin-top:1.6rem}
 
-/* ---------- índice de servicios ---------- */
-.svc-index{list-style:none;margin:2.6rem 0 0;padding:0}
-.svc-index li{border-top:1px solid var(--hair)}
-.svc-index li:last-child{border-bottom:1px solid var(--hair)}
-.svc-index a{
-  display:grid;grid-template-columns:3.5rem 1fr;gap:1rem 2rem;align-items:baseline;
-  padding:1.7rem 0;text-decoration:none;
-  transition:padding-left .2s ease;
+/* ---------- servicios: tira horizontal arrastrable ---------- */
+.strip-wrap{margin-top:2.8rem}
+.strip{
+  display:flex;gap:clamp(1.2rem,2.5vw,2rem);
+  list-style:none;margin:0;padding:.5rem 0 1.5rem;
+  overflow-x:auto;
+  scroll-snap-type:x proximity;
+  cursor:grab;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
 }
-.svc-index a:hover{padding-left:.7rem}
-@media (prefers-reduced-motion:reduce){.svc-index a:hover{padding-left:0}}
-.svc-index .n{font-family:var(--mono);font-size:.8rem;color:var(--piedra)}
-.svc-index a:hover .n{color:var(--ambar)}
-.svc-index .t{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2rem);font-weight:500;color:var(--marfil)}
-.svc-index .d{grid-column:2;color:var(--piedra);font-size:.98rem;max-width:56ch}
+.strip::-webkit-scrollbar{display:none}
+.strip.dragging{cursor:grabbing;scroll-snap-type:none}
+.strip li{flex:0 0 auto;width:clamp(250px,28vw,360px);scroll-snap-align:start}
+.strip a{display:block;text-decoration:none}
+
+/* la tarjeta: blob orgánico que se contrae a rectángulo al pasar el mouse */
+.card-visual{
+  position:relative;height:clamp(280px,32vw,360px);
+  background:var(--c,var(--ambar));
+  transition:border-radius .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.card-visual svg{width:44%;height:auto;stroke:var(--tinta);stroke-width:4;fill:none;transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.b1{border-radius:62% 38% 46% 54%/50% 62% 38% 50%}
+.b2{border-radius:42% 58% 62% 38%/56% 44% 58% 42%}
+.b3{border-radius:55% 45% 38% 62%/44% 56% 50% 50%}
+.b4{border-radius:48% 52% 58% 42%/62% 40% 56% 44%}
+.strip a:hover .card-visual,.strip a:focus-visible .card-visual{
+  border-radius:16px;transform:scale(.96);
+}
+.strip a:hover .card-visual svg{transform:rotate(-5deg) scale(1.08)}
+@media (prefers-reduced-motion:reduce){
+  .card-visual,.card-visual svg{transition:none}
+  .strip a:hover .card-visual{transform:none}
+}
+
+/* tipografía de tarjeta: serif en mayúsculas + itálica (patrón makemepulse) */
+.card-meta{margin-top:1.2rem}
+.card-meta .n{font-family:var(--mono);font-size:.72rem;color:var(--piedra);letter-spacing:.12em}
+.card-meta .t{
+  display:block;margin-top:.35rem;
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(1.3rem,2.2vw,1.7rem);
+  text-transform:uppercase;letter-spacing:.02em;
+  color:var(--marfil);line-height:1.1;
+}
+.card-meta .st{
+  display:block;margin-top:.2rem;
+  font-family:var(--serif);font-style:italic;font-weight:500;
+  font-size:clamp(1rem,1.6vw,1.2rem);color:var(--piedra);
+}
+.card-meta .underline{display:block;width:26px;height:2px;background:var(--c,var(--ambar));margin-top:.8rem}
+.drag-hint{
+  font-family:var(--mono);font-size:.72rem;color:var(--piedra);
+  letter-spacing:.14em;text-transform:uppercase;margin:1rem 0 0;
+}
+
+/* reveals sutiles al hacer scroll */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.js .rv.in{opacity:1;transform:none}
+.js .strip li{opacity:0;transform:translateX(26px);transition:opacity .5s ease,transform .5s ease}
+.js .strip.in li{opacity:1;transform:none}
+.js .strip.in li:nth-child(2){transition-delay:.08s}
+.js .strip.in li:nth-child(3){transition-delay:.16s}
+.js .strip.in li:nth-child(4){transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){
+  .js .rv,.js .strip li{opacity:1;transform:none;transition:none}
+}
+
+/* la línea de naming sobre fondo claro */
+.light .naming{color:var(--tinta)}
+.light .naming em{color:var(--link-luz)}
 
 /* ---------- fundador ---------- */
 .founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,4.5rem);align-items:center;margin-top:2.6rem}
