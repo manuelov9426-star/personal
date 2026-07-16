@@ -1,0 +1,291 @@
+/* ============================================================
+   Ars · agencia — señal, no ruido
+   Síntesis "Lapidaria + Tinta y Señal": tinta café, marfil,
+   ámbar fósforo. Una caja, una animación, dos prompts.
+   ============================================================ */
+
+/* ---------- fuentes autohospedadas ---------- */
+@font-face{
+  font-family:"Fraunces";
+  src:url("fonts/Fraunces-500.woff2") format("woff2");
+  font-weight:500;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Fraunces";
+  src:url("fonts/Fraunces-600.woff2") format("woff2");
+  font-weight:600;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Fraunces";
+  src:url("fonts/Fraunces-600-italic.woff2") format("woff2");
+  font-weight:600;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:"Instrument Sans";
+  src:url("fonts/InstrumentSans-400.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Instrument Sans";
+  src:url("fonts/InstrumentSans-500.woff2") format("woff2");
+  font-weight:500;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:"Fragment Mono";
+  src:url("fonts/FragmentMono-400.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap;
+}
+
+/* ---------- tokens ---------- */
+:root{
+  --tinta:#14120F;
+  --tinta2:#1C1916;
+  --hair:#37312A;
+  --marfil:#F2EDE3;
+  --piedra:#A79E8E;
+  --ambar:#E3A84C;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Fragment Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --wrap:70rem;
+  --gap-section:clamp(6rem,14vh,11rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--tinta);
+  color:var(--marfil);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{background:var(--ambar);color:var(--tinta)}
+:focus-visible{outline:2px solid var(--ambar);outline-offset:3px;border-radius:2px}
+
+img,svg{max-width:100%;height:auto}
+p{margin:0 0 1rem}
+h1,h2,h3{margin:0;line-height:1.1;font-weight:600}
+a{color:var(--marfil)}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+.mono{font-family:var(--mono)}
+
+.skip-link{
+  position:absolute;left:-999px;top:0;z-index:100;
+  background:var(--ambar);color:var(--tinta);
+  padding:.6rem 1rem;font-family:var(--mono);font-size:.85rem;text-decoration:none;
+}
+.skip-link:focus{left:0}
+
+/* ---------- nav ---------- */
+.nav{border-bottom:1px solid var(--hair)}
+.nav-inner{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  gap:.8rem 1.5rem;padding-top:1.1rem;padding-bottom:1.1rem;
+}
+.lockup{display:inline-block;text-decoration:none;line-height:1}
+.lockup .name{font-family:var(--serif);font-weight:600;font-size:1.7rem;color:var(--marfil)}
+.lockup .apellido{
+  display:block;margin-top:.3rem;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--piedra);
+}
+.nav-links{display:flex;flex-wrap:wrap;gap:.2rem 1.6rem;list-style:none;margin:0;padding:0;align-items:baseline}
+.nav-links a{
+  font-size:.95rem;color:var(--piedra);text-decoration:none;
+  transition:color .15s;
+}
+.nav-links a:hover{color:var(--marfil)}
+.nav-links a[aria-current="page"]{color:var(--marfil)}
+.nav-links .nav-cta{color:var(--ambar);text-decoration:underline;text-underline-offset:4px}
+.nav-links .nav-cta:hover{color:var(--marfil)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(4rem,12vh,8rem)}
+.kicker{
+  font-family:var(--mono);font-size:.82rem;color:var(--ambar);
+  margin:0 0 clamp(1.5rem,4vh,2.5rem);
+}
+.kicker button{
+  all:unset;cursor:pointer;font:inherit;color:inherit;
+}
+.kicker button:focus-visible{outline:2px solid var(--ambar);outline-offset:3px}
+.wordmark{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(6rem,17vw,12rem);
+  line-height:.9;letter-spacing:-.02em;
+  display:block;
+}
+.descriptor{
+  display:block;margin-top:clamp(1rem,2.5vh,1.5rem);
+  font-family:var(--mono);font-size:.82rem;font-weight:400;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--piedra);
+}
+.pitch{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.75rem,3.8vw,2.6rem);
+  line-height:1.18;letter-spacing:-.01em;
+  max-width:19em;
+  margin:clamp(3rem,8vh,5rem) 0 0;
+}
+.pitch em{font-style:italic;font-weight:600;color:var(--ambar)}
+.hero-sub{
+  max-width:52ch;color:var(--piedra);
+  font-size:clamp(1.05rem,1.6vw,1.2rem);
+  margin:1.6rem 0 0;
+}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:1.1rem 1.8rem;margin-top:2.6rem}
+.cta-meta{
+  font-family:var(--mono);font-size:.78rem;color:var(--piedra);
+  margin:1.1rem 0 0;
+}
+
+/* la línea señal (momento firma) */
+.signal-wrap{margin-top:clamp(3.5rem,9vh,6rem)}
+.signal{display:block;width:100%;height:120px}
+.signal polyline{fill:none;stroke:var(--ambar);stroke-width:1.5}
+.signal .caret{fill:var(--ambar);opacity:0}
+.signal .caret.on{animation:caret 1.06s steps(1) infinite}
+@keyframes caret{0%,100%{opacity:1}50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.signal .caret.on{animation:none;opacity:1}}
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-block;
+  font-family:var(--sans);font-weight:500;font-size:1rem;
+  letter-spacing:.01em;text-decoration:none;
+  padding:.9rem 1.9rem;border-radius:4px;
+  background:var(--marfil);color:var(--tinta);
+  border:1px solid var(--marfil);
+  transition:background .15s,transform .15s;
+}
+.btn:hover{background:#FFFDF6;transform:translateY(-1px)}
+.btn:active{transform:none}
+@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+.link-arrow{
+  color:var(--ambar);text-decoration:underline;text-underline-offset:5px;
+  text-decoration-thickness:1px;font-size:1rem;
+}
+.link-arrow:hover{color:var(--marfil)}
+
+/* ---------- secciones ---------- */
+.section{padding-top:var(--gap-section)}
+.section-head{
+  font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--piedra);margin:0 0 2.2rem;
+}
+.section-title{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(1.9rem,4vw,2.9rem);
+  letter-spacing:-.015em;max-width:18em;
+  margin:0 0 1.2rem;
+}
+.section-sub{max-width:58ch;color:var(--piedra);margin:0}
+
+/* ---------- panel radiografía: LA única caja ---------- */
+.panel{
+  margin-top:2.8rem;
+  background:var(--tinta2);
+  border:1px solid var(--hair);
+  border-radius:10px;
+  padding:clamp(1.8rem,4vw,3rem);
+  display:grid;grid-template-columns:1.4fr 1fr;
+  gap:clamp(1.5rem,4vw,3rem);align-items:center;
+}
+@media (max-width:52rem){.panel{grid-template-columns:1fr}}
+.panel h3{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 .8rem;
+}
+.panel p{color:var(--piedra);margin:0 0 1.4rem;max-width:48ch}
+.panel .panel-cta{text-align:left}
+.panel .cta-meta{margin-top:.9rem}
+
+/* escalera tipográfica, sin cajas */
+.ladder{list-style:none;margin:3rem 0 0;padding:0}
+.ladder li{
+  display:grid;grid-template-columns:auto 1fr auto;gap:1.2rem 2rem;align-items:baseline;
+  padding:1.4rem 0;border-top:1px solid var(--hair);
+}
+.ladder li:last-child{border-bottom:1px solid var(--hair)}
+.ladder .n{font-family:var(--mono);font-size:.8rem;color:var(--ambar)}
+.ladder .t{font-family:var(--serif);font-size:clamp(1.25rem,2.4vw,1.75rem);font-weight:500}
+.ladder .t small{display:block;font-family:var(--sans);font-size:.92rem;color:var(--piedra);margin-top:.35rem}
+.ladder .tag{font-family:var(--mono);font-size:.78rem;color:var(--piedra);white-space:nowrap}
+@media (max-width:44rem){
+  .ladder li{grid-template-columns:auto 1fr}
+  .ladder .tag{grid-column:2;white-space:normal}
+}
+
+/* ---------- la línea de naming ---------- */
+.naming{
+  font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.75rem,4.2vw,3rem);
+  line-height:1.25;letter-spacing:-.01em;
+  max-width:22em;margin:0;
+}
+.naming em{font-style:italic;font-weight:600;color:var(--ambar)}
+.naming + p{margin-top:1.6rem}
+
+/* ---------- índice de servicios ---------- */
+.svc-index{list-style:none;margin:2.6rem 0 0;padding:0}
+.svc-index li{border-top:1px solid var(--hair)}
+.svc-index li:last-child{border-bottom:1px solid var(--hair)}
+.svc-index a{
+  display:grid;grid-template-columns:3.5rem 1fr;gap:1rem 2rem;align-items:baseline;
+  padding:1.7rem 0;text-decoration:none;
+  transition:padding-left .2s ease;
+}
+.svc-index a:hover{padding-left:.7rem}
+@media (prefers-reduced-motion:reduce){.svc-index a:hover{padding-left:0}}
+.svc-index .n{font-family:var(--mono);font-size:.8rem;color:var(--piedra)}
+.svc-index a:hover .n{color:var(--ambar)}
+.svc-index .t{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2rem);font-weight:500;color:var(--marfil)}
+.svc-index .d{grid-column:2;color:var(--piedra);font-size:.98rem;max-width:56ch}
+
+/* ---------- fundador ---------- */
+.founder{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem)}
+@media (max-width:52rem){.founder{grid-template-columns:1fr}}
+.founder-creds{list-style:none;margin:0;padding:0}
+.founder-creds li{
+  padding:1rem 0;border-top:1px solid var(--hair);
+  display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:baseline;
+}
+.founder-creds li:last-child{border-bottom:1px solid var(--hair)}
+.founder-creds .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ambar);white-space:nowrap}
+.founder-creds .v{color:var(--marfil);font-size:.98rem}
+.founder-creds .v span{color:var(--piedra)}
+
+/* ---------- endcap ---------- */
+.endcap{padding:var(--gap-section) 0 clamp(5rem,12vh,8rem)}
+.endcap-inner{border-top:1px solid var(--hair);padding-top:var(--gap-section)}
+.endcap .section-title{max-width:14em}
+.alt-paths{
+  margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.8rem 2.5rem;
+  font-size:.95rem;color:var(--piedra);
+}
+.alt-paths a{color:var(--piedra);text-decoration:underline;text-underline-offset:4px}
+.alt-paths a:hover{color:var(--ambar)}
+
+/* ---------- footer statusline (prompt nº 2) ---------- */
+.footer{border-top:1px solid var(--hair);margin-top:clamp(4rem,10vh,7rem)}
+.footer-inner{
+  display:flex;flex-wrap:wrap;gap:.8rem 2rem;align-items:baseline;justify-content:space-between;
+  padding-top:1.4rem;padding-bottom:1.6rem;
+  font-family:var(--mono);font-size:.8rem;color:var(--piedra);
+}
+.footer a{color:var(--piedra);text-decoration:none}
+.footer a:hover{color:var(--ambar)}
+.footer .prompt-line{color:var(--marfil)}
+.footer .prompt-line .host{color:var(--ambar)}
+.footer .cursor{
+  display:inline-block;width:.55em;height:1em;background:var(--ambar);
+  vertical-align:text-bottom;margin-left:3px;
+  animation:caret 1.06s steps(1) infinite;
+}
+@media (prefers-reduced-motion:reduce){.footer .cursor{animation:none}}
+.footer-meta{width:100%;display:flex;flex-wrap:wrap;gap:.5rem 2rem;justify-content:space-between;border-top:1px solid var(--hair);padding:1rem 0 1.4rem;font-family:var(--mono);font-size:.72rem}
