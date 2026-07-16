@@ -53,14 +53,19 @@ if(a)gtag('event','cta_click',{cta_id:a.dataset.cta});});
 
 <main id="contenido">
 
-<section class="hero"><div class="wrap">
+<section class="hero">
+<svg class="doodle drift circ" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42"/></svg>
+<svg class="doodle drift slow tri" viewBox="0 0 100 100" aria-hidden="true"><path d="M50,12 L88,82 L12,82 Z" stroke-linejoin="round"/></svg>
+<svg class="doodle drift squig" viewBox="0 0 120 52" aria-hidden="true"><path d="M6,40 C 26,8 40,8 56,30 C 70,48 88,44 114,14" stroke-linecap="round"/></svg>
+<div class="wrap">
 <p class="kicker"><button type="button" data-replay title="ars@bogota — clic para repetir la señal">ars@bogota:~$</button></p>
 <h1>
 <span class="wordmark">Ars</span>
 <span class="descriptor">agencia de medición causal · bogotá</span>
 </h1>
-<p class="pitch">Su pauta dice que funciona.<br><em>¿Y si lo comprobamos?</em></p>
-<p class="hero-sub">Medición causal e incrementalidad para marcas que quieren saber, no suponer. Pauta, medición, IA aplicada y creatividad medida — sin fingir que somos cincuenta personas.</p>
+<div class="dashes" aria-hidden="true"><span class="d1"></span><span class="d2"></span><span class="d3"></span><span class="d4"></span></div>
+<p class="pitch">Su pauta dice que funciona.<br><em class="hl">¿Y si lo comprobamos?</em></p>
+<p class="hero-sub">Medición causal e incrementalidad para marcas que quieren saber, no suponer — sin fingir que somos cincuenta personas.</p>
 <div class="hero-cta">
 <!-- TODO: reemplazar NUMERO_WHATSAPP por el número de WhatsApp Business (formato 57XXXXXXXXXX) -->
 <a class="btn" href="https://wa.me/NUMERO_WHATSAPP?text=Hola%2C%20vengo%20del%20inicio%20de%20arsagencia.com%20y%20quiero%20la%20radiograf%C3%ADa%20gratis." rel="noopener" target="_blank" data-cta="hero-radiografia">Pedir la radiografía gratis</a>
@@ -73,17 +78,20 @@ if(a)gtag('event','cta_click',{cta_id:a.dataset.cta});});
 <rect class="caret" width="9" height="18"/>
 </svg>
 </div>
-</div></section>
+</div>
+</section>
 
-<section class="section" id="radiografia"><div class="wrap">
+<div class="tear" style="--from:var(--tinta);--to:var(--marfil)" aria-hidden="true"><svg viewBox="0 0 1440 26" preserveAspectRatio="none"><path d="M0,26 L0,13 L86,4 L178,17 L296,2 L408,19 L522,6 L640,15 L758,3 L878,18 L992,7 L1104,16 L1228,4 L1330,14 L1440,5 L1440,26 Z"/></svg></div>
+
+<section class="section light" id="radiografia"><div class="wrap">
 <p class="section-head">~/empezar</p>
 <h2 class="section-title">Empiece gratis. En serio.</h2>
-<p class="section-sub">Una agencia nueva no puede pedirle confianza; puede ganársela trabajando. Por eso el primer paso no cuesta nada y el segundo tiene precio fijo — acordado antes de empezar, no después.</p>
+<p class="section-sub">Una agencia nueva no puede pedirle confianza; puede ganársela trabajando. El primer paso es gratis y el segundo tiene precio fijo, acordado antes de empezar.</p>
 
 <div class="panel">
 <div>
 <h3>La radiografía de su medición</h3>
-<p>30 minutos de llamada con quien hará el trabajo y 3 hallazgos concretos por escrito sobre cómo está midiendo su pauta hoy. Suyos, nos contrate o no.</p>
+<p>30 minutos con quien hará el trabajo y 3 hallazgos concretos por escrito. Suyos, nos contrate o no.</p>
 </div>
 <div class="panel-cta">
 <!-- TODO: reemplazar NUMERO_WHATSAPP -->
@@ -95,71 +103,80 @@ if(a)gtag('event','cta_click',{cta_id:a.dataset.cta});});
 <ol class="ladder">
 <li>
 <span class="n">01</span>
-<span class="t">Radiografía<small>La llamada y los 3 hallazgos. El punto de partida de todo.</small></span>
+<span class="t">Radiografía<small>La llamada y los 3 hallazgos. El punto de partida.</small></span>
 <span class="tag">gratis</span>
 </li>
 <li>
 <span class="n">02</span>
-<span class="t">Diagnóstico<small>2–3 semanas auditando datos, pauta y medición. Sale el mapa de fugas priorizado.</small></span>
+<span class="t">Diagnóstico<small>2–3 semanas auditando datos, pauta y medición. Sale el mapa de fugas.</small></span>
 <span class="tag">precio fijo</span>
 </li>
 <li>
 <span class="n">03</span>
-<span class="t">Acompañamiento<small>Operamos pauta, medición y experimentos. Se queda porque quiere, no porque firmó.</small></span>
+<span class="t">Acompañamiento<small>Pauta, medición y experimentos. Se queda porque quiere, no porque firmó.</small></span>
 <span class="tag">mensual · sin permanencia</span>
 </li>
 </ol>
 </div></section>
 
+<div class="tear" style="--from:var(--marfil);--to:var(--tinta)" aria-hidden="true"><svg viewBox="0 0 1440 26" preserveAspectRatio="none"><path d="M0,26 L0,13 L86,4 L178,17 L296,2 L408,19 L522,6 L640,15 L758,3 L878,18 L992,7 L1104,16 L1228,4 L1330,14 L1440,5 L1440,26 Z"/></svg></div>
+
 <section class="section"><div class="wrap">
 <p class="section-head">~/nombre</p>
 <p class="naming"><em>Ars</em>, del latín, es el oficio hecho con maestría. Nosotros lo aplicamos a la medición.</p>
-<p class="section-sub">Por eso no opinamos sobre el ROI: lo demostramos con experimentos y grupo de control. Y si algo no funcionó, se lo decimos con la misma evidencia.</p>
+<p class="section-sub">No opinamos sobre el ROI: lo demostramos con experimentos y grupo de control. Y si algo no funcionó, se lo decimos con la misma evidencia.</p>
 </div></section>
 
-<section class="section"><div class="wrap">
+<div class="tear" style="--from:var(--tinta);--to:var(--marfil)" aria-hidden="true"><svg viewBox="0 0 1440 26" preserveAspectRatio="none"><path d="M0,26 L0,13 L86,4 L178,17 L296,2 L408,19 L522,6 L640,15 L758,3 L878,18 L992,7 L1104,16 L1228,4 L1330,14 L1440,5 L1440,26 Z"/></svg></div>
+
+<section class="section light"><div class="wrap">
 <p class="section-head">~/servicios</p>
 <h2 class="section-title">Cuatro frentes, un mismo estándar: que se pueda comprobar.</h2>
 <ul class="svc-index">
 <li><a href="servicios.html#pauta">
-<span class="n">01</span><span class="t">Gestión de pauta</span>
-<span class="d">Google, Meta y programática operadas como un portafolio: cada peso entra con una hipótesis y sale con una lectura.</span>
+<span class="n">01</span><span class="t"><span class="dash" style="--c:var(--c1)" aria-hidden="true"></span>Gestión de pauta</span>
+<span class="d">Google, Meta y programática como un portafolio: cada peso entra con una hipótesis y sale con una lectura.</span>
 </a></li>
 <li><a href="servicios.html#medicion">
-<span class="n">02</span><span class="t">Medición e incrementalidad</span>
-<span class="d">Geo-experimentos, lift tests y Marketing Mix Modeling para saber qué ventas no habrían ocurrido sin su pauta.</span>
+<span class="n">02</span><span class="t"><span class="dash" style="--c:var(--c2)" aria-hidden="true"></span>Medición e incrementalidad</span>
+<span class="d">Geo-experimentos, lift tests y MMM para saber qué ventas no habrían ocurrido sin su pauta.</span>
 </a></li>
 <li><a href="servicios.html#ia">
-<span class="n">03</span><span class="t">IA aplicada</span>
-<span class="d">Modelos y automatizaciones corriendo en producción, no en un demo. La IA como herramienta de margen, no de pitch.</span>
+<span class="n">03</span><span class="t"><span class="dash" style="--c:var(--c3)" aria-hidden="true"></span>IA aplicada</span>
+<span class="d">Modelos y automatizaciones en producción, no en un demo. Herramienta de margen, no de pitch.</span>
 </a></li>
 <li><a href="servicios.html#creatividad">
-<span class="n">04</span><span class="t">Creatividad medida</span>
-<span class="d">Ideas que otras agencias no se atreverían a proponer, validadas con grupo de control como todo lo demás.</span>
+<span class="n">04</span><span class="t"><span class="dash" style="--c:var(--c4)" aria-hidden="true"></span>Creatividad medida</span>
+<span class="d">Ideas que otras agencias no se atreverían a proponer, validadas con grupo de control.</span>
 </a></li>
 </ul>
 </div></section>
 
-<section class="section"><div class="wrap">
+<section class="section light" style="padding-top:0"><div class="wrap">
 <p class="section-head">~/fundador</p>
 <h2 class="section-title">Quién responde por esto.</h2>
 <div class="founder">
+<figure class="founder-figure">
+<img src="img/fundador.webp" alt="Manuel Oviedo, fundador de Ars, en una foto blanco y negro con trama halftone sobre fondo naranja" width="560" height="565" decoding="async">
+<svg class="doodle drift" viewBox="0 0 100 100" aria-hidden="true"><path d="M14,86 C 30,40 60,26 88,30 M72,22 L90,29 L80,46" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</figure>
 <div>
-<p class="section-sub" style="margin-bottom:1.4rem">Ars es una agencia nueva y no vamos a fingir lo contrario: la lidera su fundador, Manuel Oviedo, con una red de especialistas que se arma según cada proyecto. Lo que sí hay detrás — y se puede verificar — está a la derecha.</p>
-<p class="section-sub" style="margin-bottom:1.8rem">En la radiografía y en cada entrega usted habla con él, no con un ejecutivo de cuenta.</p>
-<!-- TODO: reemplazar ENLACE_LINKEDIN por la URL real del perfil -->
-<a class="link-arrow" href="ENLACE_LINKEDIN" data-cta="founder-linkedin">Verificar en LinkedIn →</a>
-</div>
+<p class="section-sub" style="margin-bottom:1.6rem">Ars es una agencia nueva y no vamos a fingir lo contrario: la lidera su fundador, Manuel Oviedo, con una red de especialistas según cada proyecto. En la radiografía y en cada entrega usted habla con él — no con un ejecutivo de cuenta.</p>
 <ul class="founder-creds">
 <li><span class="k">formación</span><span class="v">MSc en Economía <span>· Universidad de los Andes</span></span></li>
 <li><span class="k">en curso</span><span class="v">MSc en Inteligencia Artificial <span>· Pontificia Universidad Javeriana</span></span></li>
 <li><span class="k">trayectoria</span><span class="v">≈8 años en analítica de marketing <span>· en firmas reconocidas del sector</span></span></li>
 <li><span class="k">base</span><span class="v">Bogotá <span>· proyectos remotos en LATAM</span></span></li>
 </ul>
+<!-- TODO: reemplazar ENLACE_LINKEDIN por la URL real del perfil -->
+<p style="margin:1.6rem 0 0"><a class="link-arrow" href="ENLACE_LINKEDIN" data-cta="founder-linkedin">Verificar en LinkedIn →</a></p>
+</div>
 </div>
 </div></section>
 
-<section class="endcap"><div class="wrap"><div class="endcap-inner">
+<div class="tear" style="--from:var(--marfil);--to:var(--tinta)" aria-hidden="true"><svg viewBox="0 0 1440 26" preserveAspectRatio="none"><path d="M0,26 L0,13 L86,4 L178,17 L296,2 L408,19 L522,6 L640,15 L758,3 L878,18 L992,7 L1104,16 L1228,4 L1330,14 L1440,5 L1440,26 Z"/></svg></div>
+
+<section class="endcap"><div class="wrap">
 <p class="section-head">~/contacto</p>
 <h2 class="section-title">Empecemos por sus números.</h2>
 <p class="section-sub">Escríbanos por WhatsApp y coordinamos la radiografía. Sin bots, sin guion de ventas: responde la misma persona que hará el trabajo.</p>
@@ -172,7 +189,7 @@ if(a)gtag('event','cta_click',{cta_id:a.dataset.cta});});
 <span>¿Prefiere agendar con calma? <a href="ENLACE_CALENDLY" data-cta="endcap-calendly">Ver el calendario</a></span>
 <span>¿Escribir largo? <a href="mailto:hola@arsagencia.com?subject=Quiero%20hablar%20de%20mi%20medici%C3%B3n" data-cta="endcap-email">hola@arsagencia.com</a></span>
 </div>
-</div></div></section>
+</div></section>
 
 </main>
 

@@ -44,6 +44,15 @@
   --marfil:#F2EDE3;
   --piedra:#A79E8E;
   --ambar:#E3A84C;
+  /* sobre fondo claro */
+  --hair-luz:#DAD2C0;
+  --sec-luz:#6B6154;
+  --link-luz:#96600E;
+  /* los cuatro frentes */
+  --c1:#E3A84C; /* pauta · ámbar */
+  --c2:#C4502F; /* medición · teja */
+  --c3:#47708C; /* ia · petróleo */
+  --c4:#7C8C4A; /* creatividad · oliva */
   --serif:"Fraunces",Georgia,serif;
   --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"Fragment Mono",ui-monospace,"SF Mono",Menlo,monospace;
@@ -158,7 +167,7 @@ a{color:var(--marfil)}
   display:inline-block;
   font-family:var(--sans);font-weight:500;font-size:1rem;
   letter-spacing:.01em;text-decoration:none;
-  padding:.9rem 1.9rem;border-radius:4px;
+  padding:.9rem 2rem;border-radius:999px;
   background:var(--marfil);color:var(--tinta);
   border:1px solid var(--marfil);
   transition:background .15s,transform .15s;
@@ -173,7 +182,7 @@ a{color:var(--marfil)}
 .link-arrow:hover{color:var(--marfil)}
 
 /* ---------- secciones ---------- */
-.section{padding-top:var(--gap-section)}
+.section{padding:clamp(4rem,9vh,7rem) 0}
 .section-head{
   font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
   color:var(--piedra);margin:0 0 2.2rem;
@@ -186,16 +195,67 @@ a{color:var(--marfil)}
 }
 .section-sub{max-width:58ch;color:var(--piedra);margin:0}
 
-/* ---------- panel radiografía: LA única caja ---------- */
+/* ---------- secciones claras + borde rasgado (el "ruido") ---------- */
+.light{background:var(--marfil);color:var(--tinta)}
+.light .section-head{color:var(--sec-luz)}
+.light .section-sub{color:var(--sec-luz)}
+.light .link-arrow{color:var(--link-luz)}
+.light .link-arrow:hover{color:var(--tinta)}
+.light .cta-meta{color:var(--sec-luz)}
+.light .ladder li{border-color:var(--hair-luz)}
+.light .ladder .n{color:var(--link-luz)}
+.light .ladder .t small,.light .ladder .tag{color:var(--sec-luz)}
+.light .svc-index li{border-color:var(--hair-luz)}
+.light .svc-index .t{color:var(--tinta)}
+.light .svc-index .n,.light .svc-index .d{color:var(--sec-luz)}
+.light .svc-index a:hover .n{color:var(--link-luz)}
+.light .founder-creds li{border-color:var(--hair-luz)}
+.light .founder-creds .k{color:var(--link-luz)}
+.light .founder-creds .v{color:var(--tinta)}
+.light .founder-creds .v span{color:var(--sec-luz)}
+
+.tear{background:var(--from);line-height:0}
+.tear svg{display:block;width:100%;height:26px;color:var(--to)}
+.tear path{fill:currentColor}
+
+/* ---------- gestos de color ---------- */
+.dashes{display:flex;gap:.65rem;margin-top:1.4rem}
+.dashes span{width:46px;height:5px;border-radius:3px}
+.dashes .d1{background:var(--c1)}
+.dashes .d2{background:var(--c2)}
+.dashes .d3{background:var(--c3)}
+.dashes .d4{background:var(--c4)}
+
+.dash{display:inline-block;width:26px;height:5px;border-radius:3px;background:var(--c,var(--ambar));vertical-align:.35em;margin-right:.9rem}
+
+/* resaltador ámbar (el gesto disruptivo del hero) */
+.hl,.pitch em.hl{
+  font-style:italic;color:var(--tinta);
+  background:linear-gradient(100deg,transparent 0 2%,var(--ambar) 2% 98%,transparent 98%);
+  padding:.06em .18em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+
+/* doodles: contornos que flotan, dosis pequeña */
+.doodle{position:absolute;pointer-events:none;stroke-width:3;fill:none}
+.doodle.drift{animation:drift 6s ease-in-out infinite}
+.doodle.drift.slow{animation-duration:8.5s;animation-delay:1.2s}
+@keyframes drift{50%{transform:translateY(-9px) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.doodle.drift{animation:none}}
+
+/* ---------- panel radiografía: LA única caja (oscura sobre claro) ---------- */
 .panel{
   margin-top:2.8rem;
-  background:var(--tinta2);
-  border:1px solid var(--hair);
-  border-radius:10px;
+  background:var(--tinta);
+  border-radius:16px;
   padding:clamp(1.8rem,4vw,3rem);
   display:grid;grid-template-columns:1.4fr 1fr;
   gap:clamp(1.5rem,4vw,3rem);align-items:center;
+  color:var(--marfil);
+  transform:rotate(-.6deg);
+  box-shadow:0 18px 44px rgba(20,18,15,.18);
 }
+.panel > *{transform:rotate(.6deg)}
 @media (max-width:52rem){.panel{grid-template-columns:1fr}}
 .panel h3{
   font-family:var(--serif);font-weight:600;
@@ -248,8 +308,17 @@ a{color:var(--marfil)}
 .svc-index .d{grid-column:2;color:var(--piedra);font-size:.98rem;max-width:56ch}
 
 /* ---------- fundador ---------- */
-.founder{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(2rem,5vw,4rem)}
+.founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,4.5rem);align-items:center;margin-top:2.6rem}
 @media (max-width:52rem){.founder{grid-template-columns:1fr}}
+.founder-figure{position:relative;margin:0;max-width:420px}
+.founder-figure img{
+  display:block;width:100%;height:auto;
+  border-radius:18px;
+  transform:rotate(-2deg);
+  box-shadow:0 16px 40px rgba(20,18,15,.22);
+}
+.founder-figure .doodle{width:74px;height:74px;right:-26px;top:-26px;stroke:var(--c2)}
+@media (max-width:52rem){.founder-figure{max-width:320px}}
 .founder-creds{list-style:none;margin:0;padding:0}
 .founder-creds li{
   padding:1rem 0;border-top:1px solid var(--hair);
@@ -261,9 +330,18 @@ a{color:var(--marfil)}
 .founder-creds .v span{color:var(--piedra)}
 
 /* ---------- endcap ---------- */
-.endcap{padding:var(--gap-section) 0 clamp(5rem,12vh,8rem)}
-.endcap-inner{border-top:1px solid var(--hair);padding-top:var(--gap-section)}
+.endcap{padding:clamp(4.5rem,10vh,7.5rem) 0 clamp(5rem,12vh,8rem)}
 .endcap .section-title{max-width:14em}
+/* el hero necesita posición para los doodles */
+.hero{position:relative;overflow:hidden}
+.hero .doodle.circ{width:110px;height:110px;right:6%;top:14%;stroke:var(--ambar)}
+.hero .doodle.tri{width:72px;height:72px;right:16%;top:44%;stroke:var(--c3)}
+.hero .doodle.squig{width:120px;height:52px;right:5%;top:66%;stroke:var(--c2)}
+@media (max-width:56rem){
+  .hero .doodle.circ{width:64px;height:64px;right:5%;top:8%}
+  .hero .doodle.tri{display:none}
+  .hero .doodle.squig{width:80px;height:36px;right:6%;top:30%}
+}
 .alt-paths{
   margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:.8rem 2.5rem;
   font-size:.95rem;color:var(--piedra);
