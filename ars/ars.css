@@ -185,9 +185,13 @@ a{color:var(--marfil)}
 /* ---------- secciones ---------- */
 .section{padding:clamp(4rem,9vh,7rem) 0}
 .section-head{
-  font-family:var(--mono);font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;
+  font-family:var(--serif);font-weight:500;font-size:.72rem;
+  letter-spacing:.4em;text-transform:uppercase;
   color:var(--piedra);margin:0 0 2.2rem;
+  display:flex;align-items:center;gap:1rem;
 }
+.section-head::before{content:"";width:34px;height:1px;background:currentColor;opacity:.6}
+.light .section-head{color:var(--sec-luz)}
 .section-title{
   font-family:var(--serif);font-weight:600;
   font-size:clamp(1.9rem,4vw,2.9rem);
