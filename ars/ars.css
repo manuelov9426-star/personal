@@ -400,6 +400,10 @@ a{color:var(--marfil)}
 .endcap .section-title{max-width:14em}
 /* el hero necesita posición para los doodles */
 .hero{position:relative;overflow:hidden}
+/* campo generativo: el "video" de la casa — señales fluyendo al fondo */
+.field{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero .doodle{z-index:1}
 .hero .doodle.circ{width:110px;height:110px;right:6%;top:14%;stroke:var(--ambar)}
 .hero .doodle.tri{width:72px;height:72px;right:16%;top:44%;stroke:var(--c3)}
 .hero .doodle.squig{width:120px;height:52px;right:5%;top:66%;stroke:var(--c2)}
