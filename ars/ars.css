@@ -373,6 +373,34 @@ a{color:var(--marfil)}
 .light .naming{color:var(--tinta)}
 .light .naming em{color:var(--link-luz)}
 
+/* ---------- la gráfica de incrementalidad (arte de la casa) ---------- */
+.chart-stage{margin-top:3rem;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media (max-width:56rem){.chart-stage{grid-template-columns:1fr}}
+.chart{display:block;width:100%;height:auto}
+.chart .axis{stroke:var(--tinta);stroke-width:2}
+.chart .bar{transform:scaleY(0);transform-origin:bottom;transform-box:fill-box;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.chart .bar.base{fill:#CFC6B4}
+.chart .bar.inc{fill:var(--ambar);transition-delay:.45s}
+.in .chart .bar{transform:scaleY(1)}
+.chart .lbl{font-family:var(--mono);font-size:12.5px;fill:var(--sec-luz);letter-spacing:.06em}
+.chart .note{font-family:var(--serif);font-style:italic;font-size:19px;fill:var(--link-luz)}
+.chart .brace{stroke:var(--link-luz);stroke-width:2;fill:none}
+.chart .dash{stroke:var(--sec-luz);stroke-width:1.5;stroke-dasharray:5 6;opacity:.7}
+.chart .anno{opacity:0;transition:opacity .6s ease 1.2s}
+.in .chart .anno{opacity:1}
+@media (prefers-reduced-motion:reduce){
+  .chart .bar{transform:scaleY(1);transition:none}
+  .chart .anno{opacity:1;transition:none}
+}
+.chart-legend{list-style:none;margin:0;padding:0;display:grid;gap:1.1rem}
+.chart-legend li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:baseline;color:var(--sec-luz);font-size:.98rem}
+.chart-legend .sw{width:15px;height:15px;border-radius:4px;transform:translateY(2px)}
+.chart-legend b{color:var(--tinta);font-weight:600}
+
+/* teaser de nosotros, compacto */
+.about-teaser{max-width:44ch}
+.about-teaser .link-arrow{display:inline-block;margin-top:1.4rem}
+
 /* ---------- fundador ---------- */
 .founder{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.5rem,6vw,4.5rem);align-items:center;margin-top:2.6rem}
 @media (max-width:52rem){.founder{grid-template-columns:1fr}}
